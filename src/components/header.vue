@@ -16,6 +16,14 @@
             <RouterLink to="/shop">
                 <h2>PACKS</h2>
             </RouterLink>
+
+    <div class="header">
+        <div class="left">
+            <RouterLink to="/shop"><h2>POPULAIRE</h2></RouterLink> 
+            <RouterLink to="/shop"><h2>BOUTIQUE</h2></RouterLink>
+            <RouterLink to="/product"><h2>PRODUCTIONS</h2></RouterLink>
+            <RouterLink to="/contest"><h2>CONCOURS</h2></RouterLink>
+            <RouterLink to="/shop"><h2>PACKS</h2></RouterLink>
         </div>
         <div class="title">
             <RouterLink to="/">
