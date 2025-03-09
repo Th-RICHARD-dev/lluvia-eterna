@@ -9,7 +9,9 @@
             <RouterLink to="/shop"><h2>PACKS</h2></RouterLink>
         </div>
         <div class="title">
-            <h1>LLUVIA ETERNA</h1>
+            <RouterLink to="/">
+                <img src="../assets/parfume_logo.svg">
+            </RouterLink> 
         </div>
         <div class="right">
             <RouterLink to="/about"><h2>HISTOIRE</h2></RouterLink> 
@@ -21,6 +23,10 @@
     </div>
 
 </template>
+
+<script setup>
+    import { RouterLink } from 'vue-router';
+</script>
 
 <style scoped>
     .header {
@@ -49,8 +55,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 0.75em;
         width: 100%;
+        height: 100%;
     }
 
     @media screen and (max-width: 1060px) {
