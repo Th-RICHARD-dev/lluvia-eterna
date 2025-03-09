@@ -1,87 +1,65 @@
 <template>
 
     <div class="header">
-        <div class="headerButton left">
-            <RouterLink to="/"><h2>POPULAIRE</h2></RouterLink> 
+        <div class="left">
+            <RouterLink to="/shop"><h2>POPULAIRE</h2></RouterLink> 
             <RouterLink to="/shop"><h2>BOUTIQUE</h2></RouterLink>
             <RouterLink to="/product"><h2>PRODUCTIONS</h2></RouterLink>
-            <RouterLink to="/"><h2>CONCOURS</h2></RouterLink>
-            <RouterLink to="/"><h2>PACKS</h2></RouterLink>
+            <RouterLink to="/contest"><h2>CONCOURS</h2></RouterLink>
+            <RouterLink to="/shop"><h2>PACKS</h2></RouterLink>
         </div>
-        <div class="brandTitle">
-            <h1>LLUVIA</h1>
-            <h1>ETERNA</h1>
+        <div class="title">
+            <h1>LLUVIA ETERNA</h1>
         </div>
-        <div class="headerButton right">
-            <RouterLink to="/"><h2>HISTOIRE</h2></RouterLink> 
-            <RouterLink to="/"><h2>SERVICE CLIENT</h2></RouterLink>
-            <RouterLink to="/"><h2>SE CONNECTER</h2></RouterLink>
-            <RouterLink to="/"><img class="img" src="../assets/white_search_button.svg"></RouterLink>
-            <RouterLink to="/"><img class="img" src="../assets/white_basketshop.svg"></RouterLink>
+        <div class="right">
+            <RouterLink to="/about"><h2>HISTOIRE</h2></RouterLink> 
+            <RouterLink to="/information"><h2>SERVICE CLIENT</h2></RouterLink>
+            <RouterLink to="/login"><h2>SE CONNECTER</h2></RouterLink>
+            <RouterLink to="/shop"><img class="img" src="../assets/white_search_button.svg"></RouterLink>
+            <RouterLink to="/shop"><img class="img" src="../assets/white_basketshop.svg"></RouterLink>
         </div>
     </div>
 
 </template>
 
-<script setup>
-
-</script>
-
 <style scoped>
-    .header{
+    .header {
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
-        background-color: black;
-        height: 10%;
-        width: 100vw;
-        top: 0;
-        margin: 0;
-        right: 0;
-        padding: 0;
-    }
-    
-    h1, h2{
-        color: white;
-        font-family: Arial, sans-serif;
-        font-weight: lighter;
-        margin: 0;
-        padding: 0;
-    }
-
-    h1{
-        font-size: 24px;
-    }
-    h2{
-        font-size: 8px;
-    }
-
-    .brandTitle{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 20px;
-        gap: 5px;
-    }
-    
-    .headerButton{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
         align-items: center;
-        width: 50%;
+        background-color: #000000;
+        color: #ffffff;
+        font-family: arial;
+        padding: 15px;
     }
 
-    .left{
-        margin-right: 390px;
-    }
-    .right{
-        margin-left: 390px;
-        margin-right: 5px;
+    a {
+        color: #ffffff;
     }
 
-    .img{
-        width: 20px;
-        height: 20px;
+    .left, .right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.5em;
+        width: 100%;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.75em;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1060px) {
+        .left, .right {
+            font-size: 0.35em;
+        }
+
+        .title {
+            font-size: 0.5em;
+        }        
     }
 </style>

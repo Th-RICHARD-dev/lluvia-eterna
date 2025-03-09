@@ -2,6 +2,3 @@
   
 
 </template>
-
-<style>
-</style>
