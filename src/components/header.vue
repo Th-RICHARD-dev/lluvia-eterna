@@ -1,4 +1,5 @@
 <template>
+
     <div class="header">
         <div class="headerButton left">
             <RouterLink to="/"><h2>POPULAIRE</h2></RouterLink> 
@@ -19,6 +20,7 @@
             <RouterLink to="/"><img class="img" src="../assets/white_basketshop.svg"></RouterLink>
         </div>
     </div>
+
 </template>
 
 <script setup>
