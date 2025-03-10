@@ -25,7 +25,7 @@
             <RouterLink to="/product"><h2>PRODUCTIONS</h2></RouterLink>
             <RouterLink to="/contest"><h2>CONCOURS</h2></RouterLink>
             <RouterLink to="/shop"><h2>PACKS</h2></RouterLink>
-        </div>
+
         <div class="title">
             <RouterLink to="/">
                 <div v-if="isNotMenu">
