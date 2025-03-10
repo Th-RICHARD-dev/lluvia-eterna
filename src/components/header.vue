@@ -16,7 +16,8 @@
             <RouterLink to="/shop">
                 <h2>PACKS</h2>
             </RouterLink>
-
+        </div>
+    </div>
     <div class="header">
         <div class="left">
             <RouterLink to="/shop"><h2>POPULAIRE</h2></RouterLink> 
