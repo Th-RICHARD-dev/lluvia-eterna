@@ -18,51 +18,42 @@
             </RouterLink>
         </div>
     </div>
-    <div class="header">
-        <div class="left">
-            <RouterLink to="/shop"><h2>POPULAIRE</h2></RouterLink> 
-            <RouterLink to="/shop"><h2>BOUTIQUE</h2></RouterLink>
-            <RouterLink to="/product"><h2>PRODUCTIONS</h2></RouterLink>
-            <RouterLink to="/contest"><h2>CONCOURS</h2></RouterLink>
-            <RouterLink to="/shop"><h2>PACKS</h2></RouterLink>
-
-        <div class="title">
-            <RouterLink to="/">
-                <div v-if="isNotMenu">
-                    <img class="img" src="../assets/logo_black.svg" alt="black logo">
-                </div>
-                <div v-else>
-                    <img class="img" src="../assets/logo.svg">
-                </div>
-            </RouterLink>
-        </div>
-        <div class="right">
-            <RouterLink to="/about">
-                <h2>HISTOIRE</h2>
-            </RouterLink>
-            <RouterLink to="/information">
-                <h2>SERVICE CLIENT</h2>
-            </RouterLink>
-            <RouterLink to="/login">
-                <h2>SE CONNECTER</h2>
-            </RouterLink>
-            <RouterLink to="/shop">
-                <div v-if="isNotMenu">
-                    <img src="../assets/black_search_button.svg" alt="search black">
-                </div>
-                <div v-else>
-                    <img src="../assets/white_search_button.svg" alt="search white">
-                </div>
-            </RouterLink>
-            <RouterLink to="/shop">
-                <div v-if="isNotMenu">
-                    <img src="../assets/black_basketshop.svg" alt="black basket">
-                </div>
-                <div v-else>
-                    <img src="../assets/white_basketshop.svg" alt="white basket">
-                </div>
-            </RouterLink>
-        </div>
+    <div class="title">
+        <RouterLink to="/">
+            <div v-if="isNotMenu">
+                <img class="img" src="../assets/logo_black.svg" alt="black logo">
+            </div>
+            <div v-else>
+                <img class="img" src="../assets/logo.svg">
+            </div>
+        </RouterLink>
+    </div>
+    <div class="right">
+        <RouterLink to="/about">
+            <h2>HISTOIRE</h2>
+        </RouterLink>
+        <RouterLink to="/information">
+            <h2>SERVICE CLIENT</h2>
+        </RouterLink>
+        <RouterLink to="/login">
+            <h2>SE CONNECTER</h2>
+        </RouterLink>
+        <RouterLink to="/shop">
+            <div v-if="isNotMenu">
+                <img src="../assets/black_search_button.svg" alt="search black">
+            </div>
+            <div v-else>
+                <img src="../assets/white_search_button.svg" alt="search white">
+            </div>
+        </RouterLink>
+        <RouterLink to="/shop">
+            <div v-if="isNotMenu">
+                <img src="../assets/black_basketshop.svg" alt="black basket">
+            </div>
+            <div v-else>
+                <img src="../assets/white_basketshop.svg" alt="white basket">
+            </div>
+        </RouterLink>
     </div>
 </template>
 
