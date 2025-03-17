@@ -1,47 +1,10 @@
 <template>
-    <div class="textBlock">
-      <span class="span">4 SAISONS</span>
-      <h3 class="subTitle">DECOUVRIR LA COLLECTION</h3>
-      <div class="arrow"></div>
+  <div class="relative min-h-screen w-full overflow-hidden">
+    <video src="../assets/bg_video.mp4" autoplay loop muted class="absolute top-0 left-0 w-screen h-screen object-fill -z-10"></video>
+    <div class="absolute left-1/2 bottom-[5%] -translate-x-1/2 text-center text-white flex flex-col items-center space-y-2">
+      <span class="text-[0.75rem] font-bold">4 SAISONS</span>
+      <h3 class="text-xs font-light">DECOUVRIR LA COLLECTION</h3>
+      <div class="w-2 h-2 rotate-45 border-r-2 border-b-2 border-white cursor-pointer mt-2"></div>
     </div>
+  </div>
 </template>
-
-<style scoped>
-
-
-.textBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0;
-  height: 100%;
-  color: white;
-  margin-top:35%;
-}
-
-.span {
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.subTitle {
-  font-weight: lighter;
-  font-size: 0.75rem;
-  margin-top: 0;
-}
-
-.arrow {
-  border: solid rgb(255, 255, 255);
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  margin-top: 5px
-}
-
-
-
-</style>
