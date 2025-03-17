@@ -69,13 +69,13 @@ export default {
 
 <style scoped>
 .header {
+    z-index: 100;
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
     color: #ffffff;
     font-family: arial;
     padding: 15px;
