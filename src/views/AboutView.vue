@@ -45,12 +45,12 @@
   </script>
 
 <style scoped>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: rgba(255,255,255,0.5); 
-    }
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+}
 </style>
