@@ -1,7 +1,7 @@
 <template>
     <svg width="100%" height="1000vh" xmlns="http://www.w3.org/2000/svg">
       <rect x="0" y="0" width="100%" height="1000vh" fill="rgba(255,255,255,0.8199)" />
-      
+
       <rect x="0" y="0" width="100%" height="200" fill="lightgray" />
       <rect x="0" y="10" width="100%" height="5" fill="gray" />
       <rect x="0" y="20" width="100%" height="5" fill="gray" />
@@ -13,7 +13,6 @@
           stroke="gray" stroke-dasharray="5,5" 
           stroke-width="2"
         />
-        
         <circle 
           :cx="item.x" :cy="item.y" 
           :r="30" 
