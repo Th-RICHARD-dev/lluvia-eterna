@@ -1,23 +1,18 @@
 <template>
     <svg width="100%" height="1000vh" xmlns="http://www.w3.org/2000/svg">
-      <!-- Background rectangle to change the SVG background color -->
       <rect x="0" y="0" width="100%" height="1000vh" fill="rgba(255,255,255,0.8199)" />
-      
-      <!-- Barre horizontale -->
+
       <rect x="0" y="0" width="100%" height="200" fill="lightgray" />
       <rect x="0" y="10" width="100%" height="5" fill="gray" />
       <rect x="0" y="20" width="100%" height="5" fill="gray" />
   
       <g v-for="(item, index) in suspensions" :key="index">
-        <!-- Ligne suspendue -->
         <line 
           :x1="item.x" :y1="30" 
           :x2="item.x" :y2="item.y" 
           stroke="gray" stroke-dasharray="5,5" 
           stroke-width="2"
         />
-        
-        <!-- Cercle cliquable -->
         <circle 
           :cx="item.x" :cy="item.y" 
           :r="30" 
