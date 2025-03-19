@@ -27,7 +27,7 @@ export default {
         </div>
     </section>
 
-    <section class="h-[180vh] place-items-center">
+    <section class="h-[180vh] justify-center place-items-center">
         <div class="h-[45%] grid grid-cols-3 grid-rows-2 gap-6 w-[60%] mb-4">
             <div class="h-full bg-black"></div>
             <div class="h-full bg-black"></div>
