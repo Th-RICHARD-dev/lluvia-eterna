@@ -1,9 +1,6 @@
+@import "tailwindcss";
 @import './base.css';
 
-#app {
-  font-weight: normal;
-}
-
-a{
+a {
   text-decoration: none;
 }
