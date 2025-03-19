@@ -1,5 +1,6 @@
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { useRouter } from 'vue-router';
 
 import 'swiper/css';
 
@@ -9,21 +10,29 @@ export default {
         SwiperSlide,
     },
     setup() {
+        const router = useRouter();
+
         const onSwiper = (swiper) => {
             console.log(swiper);
         };
+
+        const handleSquareClick = (id) => {
+            router.push({ name: 'ProductView', params: { id } });
+        };
+
         return {
-            onSwiper,
+            handleSquareClick,
+            onSwiper
         };
     },
 };
 </script>
 
 <template>
-    <section class="h-screen flex justify-center items-end">
-        <div class="text-center mb-[50px]">
-            <h3 class="text-[0.85em] uppercase">Produit du jour</h3>
-            <p class="text-[0.65em] uppercase">Explorer</p>
+    <section class="h-screen flex justify-center items-end mt-[10vh]">
+        <div class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-black flex flex-col items-center">
+            <h3 class="text-[0.75rem] font-bold uppercase">Produit du jour</h3>
+            <p class="text-xs font-light uppercase">Explorer</p>
         </div>
     </section>
 
@@ -83,29 +92,42 @@ export default {
     </section>
 
     <section class="h-screen place-items-center">
+        <!-- here -->
         <div class="h-[40%] grid grid-cols-4 gap-6 w-[80%] mb-[50px]">
-            <div class="flex flex-col justify-center gap-[5px]">
+            <div 
+                class="flex flex-col justify-center gap-[5px]"
+                @click="handleSquareClick('1')"
+            >
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <p>Produit 1</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]">
+            <div 
+                class="flex flex-col justify-center gap-[5px]"
+                @click="handleSquareClick('2')"
+            >
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <p>Produit 2</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]">
+            <div 
+                class="flex flex-col justify-center gap-[5px]"
+                @click="handleSquareClick('3')"
+            >
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <p>Produit 3</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]">
+            <div 
+                class="flex flex-col justify-center gap-[5px]"
+                @click="handleSquareClick('4')"
+            >
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <p>Produit 4</p>
                 </div>
             </div>
         </div>

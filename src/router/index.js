@@ -31,6 +31,11 @@ const router = createRouter({
       component: ProductView,
     },
     {
+      path: '/product/:id',
+      name: 'ProductView',
+      component: ProductView,
+    },
+    {
       path: '/contest',
       name: 'contest',
       component: ContestView,
