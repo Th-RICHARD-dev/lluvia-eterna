@@ -1,6 +1,6 @@
 <template>
-  <div class="contest-view">
-    <h1>Contest</h1>
+  <div class="contest-view mt-[75px] place-items-center">
+    <h1>Concours</h1>
     <div v-if="currentQuestionIndex < questions.length">
       <h2>{{ questions[currentQuestionIndex].question }}</h2>
       <ul>
@@ -19,7 +19,7 @@
           </label>
         </li>
       </ul>
-      <button @click="submitAnswer">Suivant</button>
+      <button @click="submitAnswer" class="button bg-black text-white p-2">Suivant</button>
     </div>
     <div v-else>
       <h2>Questionnaire terminer</h2>
@@ -54,9 +54,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.contest-view {
-    margin-top: 50px;
-}
-</style>
