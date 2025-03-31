@@ -17,7 +17,7 @@ export default {
         };
 
         const handleSquareClick = (id) => {
-            router.push({ name: 'ProductView', params: { id } });
+            router.push({ name: 'product', params: { id } });
         };
 
         return {
