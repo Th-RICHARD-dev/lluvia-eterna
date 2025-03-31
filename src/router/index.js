@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ShopView from '@/views/ShopView.vue'
 import ProductView from '@/views/ProductView.vue'
+import AllProductView from '@/views/AllProductView.vue'
 import ContestView from '@/views/ContestView.vue'
 import InformationView from '@/views/InformationView.vue'
 import LoginView from '@/views/LoginView.vue'
@@ -26,13 +27,13 @@ const router = createRouter({
       component: ShopView,
     },
     {
-      path: '/product',
-      name: 'product',
-      component: ProductView,
+      path: '/all-product',
+      name: 'all-product',
+      component: AllProductView,
     },
     {
       path: '/product/:id',
-      name: 'ProductView',
+      name: 'product',
       component: ProductView,
     },
     {
