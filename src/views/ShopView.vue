@@ -29,8 +29,8 @@ export default {
 </script>
 
 <template>
-    <section class="h-screen flex justify-center items-end mt-[10vh]">
-        <div class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-black flex flex-col items-center">
+    <section class="h-screen flex justify-center items-end mt-[10vh] mb-[10vh] bg-[#aaa396]">
+        <div class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-black flex flex-col items-center ">
             <h3 class="text-[0.75rem] font-bold uppercase">Produit du jour</h3>
             <p class="text-xs font-light uppercase">Explorer</p>
         </div>
@@ -38,12 +38,24 @@ export default {
 
     <section class="h-[180vh] justify-center place-items-center">
         <div class="h-[45%] grid grid-cols-3 grid-rows-2 gap-6 w-[60%] mb-4">
-            <div class="h-full bg-black"></div>
-            <div class="h-full bg-black"></div>
-            <div class="h-full bg-black"></div>
-            <div class="h-full bg-black"></div>
-            <div class="h-full bg-black"></div>
-            <div class="h-full bg-black"></div>
+            <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
+               <img src="../assets/summer_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(1)"> 
+            </div>
+            <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
+                <img src="../assets/gingerbread_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(2)">
+            </div>
+            <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
+                <img src="../assets/winter_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(3)">
+            </div>
+            <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
+                <img src="../assets/spring_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(4)">
+            </div>
+            <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
+                <img src="../assets/autumn_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(5)">
+            </div>
+            <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
+                <img src="../assets/citrus_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(6)">
+            </div>
         </div>
 
         <div class="text-center mb-[50px]">
