@@ -37,7 +37,7 @@
             <RouterLink to="/login">
                 <h2>SE CONNECTER</h2>
             </RouterLink>
-            <RouterLink to="/shop">
+            <RouterLink to="/search">
                 <div v-if="isNotMenu">
                     <img src="../assets/black_search_button.svg" alt="search black">
                 </div>
