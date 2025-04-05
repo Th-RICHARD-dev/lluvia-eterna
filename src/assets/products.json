@@ -1,0 +1,39 @@
+[
+    {
+      "id": "1",
+      "nom": "Été",
+      "image": "/src/assets/summer_product_big.svg",
+      "description": "Un parfum doux pour l'été. Idéal pour les journées ensoleillées et les balades en bord de mer."
+    },
+    {
+      "id": "2",
+      "nom": "Pain d’épices",
+      "image": "/src/assets/gingerbread_product.svg",
+      "description": "Chaleureux, épicé et sucré. Ce parfum évoque les souvenirs des fêtes de fin d'année."
+    },
+    {
+      "id": "3",
+      "nom": "Hiver",
+      "image": "/src/assets/winter_product.svg",
+      "description": "Froid, boisé, mystique. Une invitation au calme de l’hiver et à la chaleur des foyers."
+    },
+    {
+      "id": "4",
+      "nom": "Printemps",
+      "image": "/src/assets/spring_product_big.svg",
+      "description": "Frais, floral, lumineux. Il capture la renaissance de la nature et l’éveil des sens."
+    },
+    {
+      "id": "5",
+      "nom": "Automne",
+      "image": "/src/assets/autumn_product_big.svg",
+      "description": "Sombre, chaud et boisé. Ce parfum rappelle les feuilles mortes et les balades sous la pluie."
+    },
+    {
+      "id": "6",
+      "nom": "Agrumes",
+      "image": "/src/assets/citrus_product.svg",
+      "description": "Pétillant et acidulé. Parfait pour un coup de boost énergisant à tout moment de la journée."
+    }
+  ]
+  
