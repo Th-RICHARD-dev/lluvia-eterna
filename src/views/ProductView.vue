@@ -5,7 +5,7 @@
             <p class="text-xs font-light uppercase">Explorer</p>
         </div>
     </section>
-    <section class="h-[180vh] flex justify-center items-center">
+    <section class="h-[180vh] flex flex-col justify-center items-center">
         <div class="h-[50%] w-[85%] mb-4 bg-[#d9d9d9] rounded-2xl flex flex-row gap-10 p-5">
             <!-- Golden square -->
             <div class="h-[80%] w-[50%] mt-20 ml-10 bg-[#b59e7d] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
@@ -32,12 +32,16 @@
                 </div>
             </div>
         </div>
+        <!-- <div>
+            <Slider/>
+        </div> -->
     </section>
 </template>
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import products from '@/assets/products.json' // importe ton JSON
+import Slider from '@/components/slider.vue' // Assurez-vous que le chemin est correcta
 
 const route = useRoute()
 const id = computed(() => route.params.id)
