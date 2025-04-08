@@ -1,45 +1,27 @@
 <template>
-
-    <div class="carousel">
-        <div class="carousel-item"></div>
-        <div class="carousel-item"></div>
-        <div class="carousel-item"></div>
-        <div class="carousel-item"></div>
-        <div class="carousel-item"></div> 
-    </div>   
+  <Swiper :slides-per-view="3" :space-between="50" @swiper="onSwiper">
+    <SwiperSlide class="text-center">Slide 1</SwiperSlide>
+    <SwiperSlide class="text-center">Slide 2</SwiperSlide>
+    <SwiperSlide class="text-center">Slide 3</SwiperSlide>
+  </Swiper>
 </template>
 
+<script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
 
-<script setup>
-  $(document).ready(function(){
-    $('.carousel').carousel({
-      padding: 200
-  });
-  });
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    return {
+      onSwiper
+    };
+  },
+}
 </script>
-
-<style scoped>
-    body {
-    margin: 0; 
-    padding: 0;
-    background: #021514;   
-}
-.carousel{
-    height: 600px; 
-    perspective: 400px;
-    margin-top: 5%;
-}
-.carousel .carousel-item {
-    width: 400px;
-    height: 500px;
-    box-shadow: 0 0 40px #61dafb, 0 0 40px #61dafb, 0 0 40px #61dafb;
-    animation: animate 2s infinite alternate;
-    border-radius: 15px;
-}
-
-@keyframes animate {
-    to {
-      box-shadow: 0 0 50px #61dafb, 0 0 50px #61dafb, 0 0 50px #61dafb;
-    }
-  }
-</style>
