@@ -58,13 +58,13 @@
 </template>
 
 <script>
-export default {
-    computed: {
-        isNotMenu() {
-            return this.$route.path !== '/';
+    export default {
+        computed: {
+            isNotMenu() {
+                return this.$route.path !== '/';
+            }
         }
     }
-}
 </script>
 
 <style scoped>
