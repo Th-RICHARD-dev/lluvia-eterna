@@ -41,7 +41,7 @@
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import products from '@/assets/products.json' // importe ton JSON
-import Slider from '@/components/slider.vue' // Assurez-vous que le chemin est correcta
+import Slider from '@/components/slider.vue' 
 
 const route = useRoute()
 const id = computed(() => route.params.id)
