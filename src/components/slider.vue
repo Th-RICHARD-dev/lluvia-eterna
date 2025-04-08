@@ -1,14 +1,19 @@
 <template>
-  <Swiper :slides-per-view="3" :space-between="50" @swiper="onSwiper">
-    <SwiperSlide class="text-center">Slide 1</SwiperSlide>
-    <SwiperSlide class="text-center">Slide 2</SwiperSlide>
-    <SwiperSlide class="text-center">Slide 3</SwiperSlide>
+  <Swiper :slides-per-view="3" :space-between="50" :freeMode="true" :loop="true" :modules="modules">
+    <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
+      <div v-if="isImage(product.image)">
+        <img :src="product.image" :alt="product.nom" />
+      </div>
+    </SwiperSlide>
   </Swiper>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+import 'swiper/css/free-mode';
+import { FreeMode } from 'swiper/modules';
+import productsData from '../assets/products.json';
 
 export default {
   components: {
@@ -16,12 +21,17 @@ export default {
     SwiperSlide,
   },
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
+    const products = productsData;
+
+    const isImage = (imagePath) => {
+      return imagePath && imagePath.trim() !== '';
     };
+
     return {
-      onSwiper
+      products,
+      isImage,
+      modules: [FreeMode],
     };
   },
-}
+};
 </script>
