@@ -12,7 +12,7 @@
             </div>
             <div class="flex flex-col justify-start items-center w-[37%] mt-25 gap-5">
                 <h2 class="text-[1.5em] font-bold uppercase">Description</h2>
-                <div class="flex flex-row justify-between items-center w-full mt-10">
+                <div class="flex flex-row justify-between items-center w-full">
                     <!-- Render volumes dynamically -->
                     <div 
                         v-for="(volume, index) in volumes" 
@@ -25,24 +25,24 @@
                         </p>
                     </div>
                 </div>
-                <p class="uppercase text-center font-bold text-[1.25rem]">
+                <p class="uppercase text-center font-bold text-[0.95rem]">
                     {{product.description}}<br>
                 </p>
             </div>
         </div>
 
         <!-- Block to display selected volume -->
-        <div class="flex flex-row justify-between items-center w-[90%] mt-10">
+        <div class="flex flex-row justify-between items-center w-[90%] mt-40">
             <div class="h-[15vh] w-[20%] mb-4 bg-[#D9D9D9] rounded-2xl flex justify-center items-center">
-                <p class="text-center text-[2.25rem] font-bold uppercase">
+                <p class="text-center text-[1.25rem] font-bold uppercase">
                     {{ selectedVolume ? selectedVolume + ' ml' : 'Sélectionner un volume' }}
                 </p>
             </div>
             <div class="h-[15vh] w-[20%] mb-4 bg-[#D9D9D9] rounded-2xl flex justify-center items-center">
-                <p class="text-center text-[2.25rem] font-bold uppercase ">Collection {{ product.collection }}</p>
+                <p class="text-center text-[1.25rem] font-bold uppercase ">Collection {{ product.collection }}</p>
             </div>
             <div class="h-[15vh] w-[20%] mb-4 bg-[#D9D9D9] rounded-2xl flex justify-center items-center">
-                <p class="text-center text-[2.25rem] font-bold uppercase">Ajouter au panier</p>
+                <p class="text-center text-[1.25rem] font-bold uppercase">Ajouter au panier</p>
             </div>
         </div>
     </section>
