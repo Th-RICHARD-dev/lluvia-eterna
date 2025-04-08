@@ -7,17 +7,16 @@
     </section>
     <section class="h-[180vh] flex flex-col justify-center items-center">
         <div class="h-[50%] w-[85%] mb-4 bg-[#d9d9d9] rounded-2xl flex flex-row gap-10 p-5">
-            <!-- Golden square -->
-            <div class="h-[80%] w-[50%] mt-20 ml-10 bg-[#b59e7d] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
-                <h2 class="text-[1.5em] font-bold text-center uppercase">{{product.nom}}</h2>
+            <div
+                class="h-[80%] w-[50%] mt-20 ml-10 bg-[#b59e7d] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
+                <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.nom }}</h2>
                 <img :src="product.image" class="w-[61%] h-[75%] rounded-2xl">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">69.99€</h2>
             </div>
-            <!-- Description section -->
             <div class="flex flex-col justify-start items-center w-[37%] mt-25 gap-5">
                 <h2 class="text-[1.5em] font-bold uppercase">Description</h2>
                 <p class="uppercase">
-                    {{product.description}}<br>
+                    {{ product.description }}<br>
                 </p>
                 <div class="flex flex-row justify-between items-center w-full mt-20">
                     <div class="h-[7.5vh] w-[20%] mb-4 bg-[#969696] rounded-2xl flex justify-center items-center">
@@ -32,22 +31,23 @@
                 </div>
             </div>
         </div>
-        <!-- <div>
-            <Slider/>
-        </div> -->
+        <div class="w-[100%]">
+            <Slider />
+        </div>
+
     </section>
 </template>
+
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
-import products from '@/assets/products.json' // importe ton JSON
-import Slider from '@/components/slider.vue' // Assurez-vous que le chemin est correcta
+import products from '@/assets/products.json'
+import Slider from '@/components/slider.vue'
 
 const route = useRoute()
 const id = computed(() => route.params.id)
 
-// Trouve le bon produit
 const product = computed(() =>
-  products.find(p => p.id === id.value)
+    products.find(p => p.id === id.value)
 )
 </script>
