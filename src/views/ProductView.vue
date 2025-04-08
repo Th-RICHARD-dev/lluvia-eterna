@@ -1,11 +1,8 @@
 <template>
-    <section class="h-screen flex justify-center items-end mt-[10vh] mb-[10vh] bg-[#aaa396]">
-        <div class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-black flex flex-col items-center">
-            <h3 class="text-[0.75rem] font-bold uppercase">Produit du jour</h3>
-            <p class="text-xs font-light uppercase">Explorer</p>
-        </div>
+    <section class="h-screen flex justify-center items-end mt-[10vh] bg-[#aaa396]">
     </section>
-    <section class="h-[180vh] flex flex-col justify-center items-center">
+    <section class="h-[180vh] flex flex-col items-center">
+        <h1 class="text-[2.5em] font-bold text-center uppercase mt-10 mb-100">Type de produit</h1>
         <div class="h-[50%] w-[85%] mb-4 bg-[#d9d9d9] rounded-2xl flex flex-row gap-20 p-5">
             <!-- Golden square -->
             <div class="h-[80%] w-[50%] mt-20 ml-10 bg-[#b59e7d] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">

@@ -89,7 +89,7 @@
 }
 
 .white-header {
-    background-color: #ffffff;
+    background-color: #F1EADA;
     color: #000000;
 }
 

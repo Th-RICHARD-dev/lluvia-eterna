@@ -46,6 +46,30 @@
       "description": "Un instant suspendu, une brise légère chargée de soleil… AGRUME est un voyage olfactif à travers les souvenirs éclatants d’été, où chaque note raconte une histoire, un moment précieux gravé dans le temps. Dès l’ouverture, une explosion d’orange sanguine, de citron vert et de pamplemousse évoque ces matinées d’enfance, où l’on épluchait avec gourmandise des fruits fraîchement cueillis. Puis, le néroli et la fleur d’oranger viennent apporter une touche de douceur, rappelant les siestes sous les orangers en fleurs, bercées par la chaleur de l’après-midi. Enfin, un fond subtil de musc blanc et de bois blond prolonge ce souvenir, comme la caresse d’un rayon de soleil sur la peau.AGRUME, c’est l’odeur des jours heureux, une mémoire olfactive qui ressuscite la lumière et l’insouciance d’un été éternel.",
       "light_description":"Un instant suspendu, une brise légère chargée de soleil… AGRUME est un voyage olfactif à travers les souvenirs éclatants d’été.",
       "prix":  "69,99€"
+    },
+    {
+      "id": "7",
+      "nom": "Mer",
+      "image": "/src/assets/sea_product_big.svg",
+      "description": "",
+      "light_description":"",
+      "prix":  "69,99€"
+    },
+    {
+      "id": "8",
+      "nom": "Cuir",
+      "image": "/src/assets/leather_product_big.svg",
+      "description": "",
+      "light_description":"",
+      "prix":  "69,99€"
+    },
+    {
+      "id": "9",
+      "nom": "lavande",
+      "image": "/src/assets/lavender_product_big.svg",
+      "description": "",
+      "light_description":"",
+      "prix":  "69,99€"
     }
   ]
   
