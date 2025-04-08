@@ -90,7 +90,7 @@ export default {
         </div>
     </section>
 
-    <section class="relative h-screen flex-column mb-[50px]">
+    <section id="packs" class="relative h-screen flex-column mb-[50px]">
         <Swiper class="h-full bg-[#999999]" :slides-per-view="1" @swiper="onSwiper">
             <SwiperSlide>Slide 1</SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>
