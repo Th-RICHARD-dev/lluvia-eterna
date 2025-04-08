@@ -104,9 +104,9 @@ a {
 .left,
 .right {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    font-size: 0.5em;
+    font-size: 1em;
     width: 100%;
 }
 
