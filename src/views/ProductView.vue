@@ -2,7 +2,7 @@
     <section class="h-screen flex justify-center items-end mt-[10vh] bg-[#aaa396]">
     </section>
     <section class="h-[180vh] flex flex-col items-center">
-        <h1 class="text-[2.5em] font-bold text-center uppercase mt-10 mb-100">Type de produit</h1>
+        <h1 class="text-[1.5em] font-bold text-center uppercase mt-10 mb-50 font-[Arial]">Type de produit</h1>
         <div class="h-[50%] w-[85%] mb-4 bg-[#d9d9d9] rounded-2xl flex flex-row gap-20 p-5">
             <div class="h-[80%] w-[50%] mt-20 ml-10 bg-[#b59e7d] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">{{product.nom}}</h2>
