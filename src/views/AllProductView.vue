@@ -8,7 +8,7 @@
       >
         <img :src="product.image" class="h-64 bg-gray-200 mb-4" />
         <h1 class="text-2xl font-light uppercase mb-4">{{ product.nom }}</h1>
-        <p class="text-lg mb-4">{{ product.description }}</p>
+        <p class="text-lg mb-4">{{ product.light_description }}</p>
   
         <button
           @click="$router.push(`/product/${product.id}`)"

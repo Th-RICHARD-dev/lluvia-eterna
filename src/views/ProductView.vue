@@ -6,20 +6,17 @@
         </div>
     </section>
     <section class="h-[180vh] flex flex-col justify-center items-center">
-        <div class="h-[50%] w-[85%] mb-4 bg-[#d9d9d9] rounded-2xl flex flex-row gap-10 p-5">
+        <div class="h-[50%] w-[85%] mb-4 bg-[#d9d9d9] rounded-2xl flex flex-row gap-20 p-5">
             <!-- Golden square -->
             <div class="h-[80%] w-[50%] mt-20 ml-10 bg-[#b59e7d] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">{{product.nom}}</h2>
                 <img :src="product.image" class="w-[61%] h-[75%] rounded-2xl">
-                <h2 class="text-[1.5em] font-bold text-center uppercase">69.99€</h2>
+                <h2 class="text-[1.5em] font-bold text-center uppercase">{{product.prix}}</h2>
             </div>
             <!-- Description section -->
             <div class="flex flex-col justify-start items-center w-[37%] mt-25 gap-5">
                 <h2 class="text-[1.5em] font-bold uppercase">Description</h2>
-                <p class="uppercase">
-                    {{product.description}}<br>
-                </p>
-                <div class="flex flex-row justify-between items-center w-full mt-20">
+                <div class="flex flex-row justify-between items-center w-full mt-10">
                     <div class="h-[7.5vh] w-[20%] mb-4 bg-[#969696] rounded-2xl flex justify-center items-center">
                         <p class="text-center text-[1.25rem] font-bold uppercase text-white">50 ml</p>
                     </div>
@@ -30,6 +27,9 @@
                         <p class="text-center text-[1.25rem] font-bold uppercase text-white">150 ml</p>
                     </div>
                 </div>
+                <p class="uppercase text-center font-bold text-[1.25rem]">
+                    {{product.description}}<br>
+                </p>
             </div>
         </div>
         <!-- <div>
