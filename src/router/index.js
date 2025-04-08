@@ -28,7 +28,7 @@ const router = createRouter({
       component: ShopView,
     },
     {
-      path: '/all-product',
+      path: '/all-product/',
       name: 'all-product',
       component: AllProductView,
     },
