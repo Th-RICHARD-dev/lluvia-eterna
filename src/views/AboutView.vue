@@ -1,5 +1,5 @@
-<template>
-    <svg width="100%" height="1000vh" xmlns="http://www.w3.org/2000/svg">
+<!--<template>
+    svg width="100%" height="1000vh" xmlns="http://www.w3.org/2000/svg">
       <rect x="0" y="0" width="100%" height="1000vh" fill="rgba(255,255,255,0.8199)" />
 
       <rect x="0" y="0" width="100%" height="200" fill="lightgray" />
@@ -21,11 +21,11 @@
           style="cursor: pointer;" 
         />
       </g>
-    </svg>
-  </template>
+    </svg>-->
+  <!--</template>
   
-  <script>
-  export default {
+  <script>-->
+  <!--export default {
     data() {
       return {
         suspensions: [
@@ -53,4 +53,46 @@ body {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);
 }
-</style>
+</style>-->
+
+
+<template>
+    <swiper
+      :slidesPerView="3"
+      :spaceBetween="30"
+      :freeMode="true"
+      :modules="modules"
+      class="mySwiper mt-42 h-100 gap-4 w-[90%] mb-4"
+    >
+      <swiper-slide class="bg-black rounded-2xl">
+      </swiper-slide>
+      <swiper-slide class="bg-black rounded-2xl">Slide 2</swiper-slide><swiper-slide class="bg-black rounded-2xl">Slide 3</swiper-slide>
+      <swiper-slide class="bg-black rounded-2xl">Slide 4</swiper-slide><swiper-slide class="bg-black rounded-2xl">Slide 5</swiper-slide>
+    </swiper>
+  </template>
+  <script>
+    // Import Swiper Vue.js components
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+  
+    // Import Swiper styles
+    import 'swiper/css';
+  
+    import 'swiper/css/free-mode';
+    import 'swiper/css/pagination';
+  
+  
+    // import required modules
+    import { FreeMode, Pagination } from 'swiper/modules';
+  
+    export default {
+      components: {
+        Swiper,
+        SwiperSlide,
+      },
+      setup() {
+        return {
+          modules: [FreeMode, Pagination],
+        };
+      },
+    };
+  </script>
