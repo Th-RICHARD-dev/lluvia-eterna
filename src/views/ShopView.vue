@@ -37,7 +37,7 @@ export default {
     </section>
 
     <section class="h-[180vh] justify-center place-items-center">
-        <div class="h-[40%] grid grid-cols-3 grid-rows-2 gap-6 w-[40%] mb-4">
+        <div class="h-[40%] grid grid-cols-3 grid-rows-2 gap-10 w-[40%] mb-4">
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-5">
                 <img src="../assets/summer_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(1)">
