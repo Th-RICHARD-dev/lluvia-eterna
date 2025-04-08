@@ -1,4 +1,5 @@
 <template>
+    <!-- Routes qui renvoie sur chaque page -->
     <div :class="['header', { 'white-header': isNotMenu }]">
         <div class="left">
             <RouterLink to="/shop">
@@ -55,6 +56,7 @@
 </template>
 
 <script>
+// Renvoie la classe "white-header" si la route n'est pas "/"
     export default {
         computed: {
             isNotMenu() {
@@ -84,7 +86,7 @@
 }
 
 .white-header {
-    background-color: #ffffff;
+    background-color: #F1EADA;
     color: #000000;
 }
 
@@ -99,9 +101,9 @@ a {
 .left,
 .right {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    font-size: 0.5em;
+    font-size: 1em;
     width: 100%;
 }
 

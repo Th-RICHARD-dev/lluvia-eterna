@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useRouter } from 'vue-router';
 
 import 'swiper/css';
-
 export default {
     components: {
         Swiper,
@@ -68,23 +67,23 @@ export default {
             <div class="h-full bg-black"></div>
         </div>
 
-        <div class="h-[15%] grid grid-cols-3 gap-6 w-[60%]">
-            <div class="flex flex-col justify-center gap-[5px]">
+        <div class="h-[15%] grid grid-cols-3 place-items-center gap-6 w-[60%]">
+            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <img src="../assets/lavender_product.svg" class=" my-5 rounded-2xl transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(7)">
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]">
+            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <img src="../assets/leather_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(8)">
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]">
+            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
-                    <p>Lorem ipsum</p>
+                    <img src="../assets/sea_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(9)">
                 </div>
             </div>
         </div>

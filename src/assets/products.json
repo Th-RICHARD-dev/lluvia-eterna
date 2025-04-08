@@ -3,37 +3,73 @@
       "id": "1",
       "nom": "Été",
       "image": "/src/assets/summer_product_big.svg",
-      "description": "Un parfum doux pour l'été. Idéal pour les journées ensoleillées et les balades en bord de mer."
+      "description": "Le soleil brille à son zénith, l’air vibre de chaleur, et une brise légère transporte des effluves d’agrumes gorgés de lumière… ÉTÉ est un parfum solaire et enivrant, une plongée dans les souvenirs dorés des journées sans fin. Dès l’ouverture, une explosion d’orange sanguine, de citron vert et de pamplemousse évoque la fraîcheur d’un jus glacé savouré sur une terrasse en bord de mer. Puis, le cœur s’illumine de fleurs blanches – néroli, tiaré et ylang-ylang – rappelant la douceur de la peau chauffée par le soleil et les draps empreints de sel marin. Enfin, un fond de vanille douce, de musc blanc et de bois flotté enveloppe la peau d’une sensualité chaude et réconfortante, comme une dernière étreinte avant le coucher du soleil. ÉTÉ, c’est l’odeur des souvenirs heureux, des éclats de rire sous un ciel azur, des instants volés entre sable chaud et vagues rafraîchissantes, un parfum qui prolonge la magie des beaux jours..",
+      "light_description":"Le soleil brille à son zénith, l’air vibre de chaleur, et une brise légère transporte des effluves d’agrumes gorgés de lumière… ÉTÉ est un parfum solaire et enivrant.",
+      "prix":  "89,99€"
     },
     {
       "id": "2",
       "nom": "Pain d’épices",
-      "image": "/src/assets/gingerbread_product.svg",
-      "description": "Chaleureux, épicé et sucré. Ce parfum évoque les souvenirs des fêtes de fin d'année."
+      "image": "/src/assets/gingerbread_product_big.svg",
+      "description": "Une douce chaleur envahit l’air, les effluves sucrés et épicés réveillent des souvenirs d’enfance… PAIN D’ÉPICE est un parfum réconfortant, une madeleine olfactive qui ramène aux instants magiques des fêtes et des goûters partagés. Dès l’ouverture, une explosion de cannelle, de gingembre et d’orange confite évoque ces matinées passées à préparer des gourmandises dans une cuisine baignée de lumière. Puis, le cœur se réchauffe avec des notes de miel doré, de muscade et de vanille, rappelant la texture moelleuse d’un pain d’épices tout juste sorti du four. Enfin, un fond délicat de fève tonka, de bois de santal et de sucre brun enveloppe la peau d’une douceur infinie, comme une étreinte chaleureuse lors d’un soir d’hiver. PAIN D’ÉPICE, c’est l’essence des souvenirs sucrés, un parfum qui évoque les rires autour d’une table, les vitrines scintillantes et la tendresse d’un instant hors du temps.",
+      "light_description":"Une douce chaleur envahit l’air, les effluves sucrés et épicés réveillent des souvenirs d’enfance… PAIN D’ÉPICE est un parfum réconfortant.",
+      "prix":  "69,99€"
     },
     {
       "id": "3",
       "nom": "Hiver",
-      "image": "/src/assets/winter_product.svg",
-      "description": "Froid, boisé, mystique. Une invitation au calme de l’hiver et à la chaleur des foyers."
+      "image": "/src/assets/winter_product_big.svg",
+      "description": "Un frisson sur la peau, l’air vif chargé de promesses… HIVER capture l’essence des instants figés dans la blancheur de la saison, ces souvenirs où le froid mordant se mêle à la chaleur réconfortante d’un foyer. Dès les premières notes, la fraîcheur givrée de la mandarine et du zeste de citron se mêle à la pureté d’un souffle glacé, rappelant les promenades dans un paysage enneigé. Puis, le cœur se réchauffe avec des accents de bois de cèdre et de baies de genièvre, évoquant le crépitement d’un feu de cheminée après une longue journée passée dehors. Enfin, un fond enveloppant de musc blanc et d’ambre doux dépose sur la peau une sensation cotonneuse, tel un plaid douillet en plein hiver. HIVER, c’est le parfum des souvenirs intimes, des rires cristallins dans l’air froid, d’un temps suspendu entre frissons et réconfort..",
+      "light_description":"Un frisson sur la peau, l’air vif chargé de promesses… HIVER capture l’essence des instants figés dans la blancheur de la saison.",
+      "prix":  "69,99€"
     },
     {
       "id": "4",
       "nom": "Printemps",
       "image": "/src/assets/spring_product_big.svg",
-      "description": "Frais, floral, lumineux. Il capture la renaissance de la nature et l’éveil des sens."
+      "description": "Les premiers rayons de soleil caressent la peau, l’air s’emplit de parfums frais et fleuris… PRINTEMPS est une parenthèse olfactive, un écho aux souvenirs de renaissance et d’insouciance, où chaque senteur réveille une émotion douce et lumineuse. Dès les premières notes, un éclat d’agrumes – citron vert, bergamote et mandarine – apporte une fraîcheur pétillante, rappelant la rosée du matin sur les jeunes bourgeons. Puis, un cœur fleuri de jasmin, de muguet et de fleur d’oranger s’épanouit, évoquant les jardins en éveil et les promenades sous les cerisiers en fleurs. Enfin, un fond délicat de musc blanc et de bois tendres prolonge cette sensation de pureté, tel un vent doux emportant les souvenirs d’une saison naissante. PRINTEMPS, c’est le parfum du renouveau, des premiers jours lumineux, des éclats de rire légers sous un ciel clair, une promesse d’instants heureux à venir.",
+      "light_description":"Les premiers rayons de soleil caressent la peau, l’air s’emplit de parfums frais et fleuris… PRINTEMPS est une parenthèse olfactive.",
+      "prix":  "69,99€"
     },
     {
       "id": "5",
       "nom": "Automne",
       "image": "/src/assets/autumn_product_big.svg",
-      "description": "Sombre, chaud et boisé. Ce parfum rappelle les feuilles mortes et les balades sous la pluie."
+      "description": "Un vent léger soulève un tourbillon de feuilles dorées, l’air est chargé de senteurs boisées et de fruits mûrs… AUTOMNE est une ode aux souvenirs doux et mélancoliques de cette saison où tout se pare de nuances chaleureuses. Dès l’ouverture, la mandarine juteuse et la bergamote lumineuse rappellent les dernières journées ensoleillées, ces instants où l’on croque dans un fruit gorgé de saveurs. Puis, le cœur se teinte de notes d’épices douces, de figue confite et de châtaigne grillée, évoquant les promenades en forêt et les goûters réconfortants autour d’une table en bois. Enfin, un sillage de bois de santal, de mousse et de vanille s’installe, tel un pull en laine douce qui réchauffe les journées fraîches et brumeuses. AUTOMNE, c’est le parfum des instants suspendus, des promenades sous la pluie fine, des souvenirs qui s’imprègnent de l’odeur de la terre humide et des feux de cheminée naissants.",
+      "light_description":"Un vent léger soulève un tourbillon de feuilles dorées, l’air est chargé de senteurs boisées et de fruits mûrs… AUTOMNE est une ode aux souvenirs doux et mélancoliques.",
+      "prix":  "69,99€"
     },
     {
       "id": "6",
       "nom": "Agrumes",
-      "image": "/src/assets/citrus_product.svg",
-      "description": "Pétillant et acidulé. Parfait pour un coup de boost énergisant à tout moment de la journée."
+      "image": "/src/assets/citrus_product_big.svg",
+      "description": "Un instant suspendu, une brise légère chargée de soleil… AGRUME est un voyage olfactif à travers les souvenirs éclatants d’été, où chaque note raconte une histoire, un moment précieux gravé dans le temps. Dès l’ouverture, une explosion d’orange sanguine, de citron vert et de pamplemousse évoque ces matinées d’enfance, où l’on épluchait avec gourmandise des fruits fraîchement cueillis. Puis, le néroli et la fleur d’oranger viennent apporter une touche de douceur, rappelant les siestes sous les orangers en fleurs, bercées par la chaleur de l’après-midi. Enfin, un fond subtil de musc blanc et de bois blond prolonge ce souvenir, comme la caresse d’un rayon de soleil sur la peau.AGRUME, c’est l’odeur des jours heureux, une mémoire olfactive qui ressuscite la lumière et l’insouciance d’un été éternel.",
+      "light_description":"Un instant suspendu, une brise légère chargée de soleil… AGRUME est un voyage olfactif à travers les souvenirs éclatants d’été.",
+      "prix":  "69,99€"
+    },
+    {
+      "id": "7",
+      "nom": "Mer",
+      "image": "/src/assets/sea_product_big.svg",
+      "description": "",
+      "light_description":"",
+      "prix":  "69,99€"
+    },
+    {
+      "id": "8",
+      "nom": "Cuir",
+      "image": "/src/assets/leather_product_big.svg",
+      "description": "",
+      "light_description":"",
+      "prix":  "69,99€"
+    },
+    {
+      "id": "9",
+      "nom": "lavande",
+      "image": "/src/assets/lavender_product_big.svg",
+      "description": "",
+      "light_description":"",
+      "prix":  "69,99€"
     }
   ]
   
