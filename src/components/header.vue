@@ -3,9 +3,6 @@
     <div :class="['header', { 'white-header': isNotMenu }]">
         <div class="left">
             <RouterLink to="/shop">
-                <h2>POPULAIRE</h2>
-            </RouterLink>
-            <RouterLink to="/shop">
                 <h2>BOUTIQUE</h2>
             </RouterLink>
             <RouterLink to="/all-product">
@@ -14,7 +11,7 @@
             <RouterLink to="/contest">
                 <h2>CONCOURS</h2>
             </RouterLink>
-            <RouterLink to="/shop">
+            <RouterLink to="/shop#packs">
                 <h2>PACKS</h2>
             </RouterLink>
         </div>

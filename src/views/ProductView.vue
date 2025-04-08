@@ -10,7 +10,6 @@
                 <img :src="product.image" class="w-[61%] h-[75%] rounded-2xl">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">{{product.prix}}</h2>
             </div>
-            <!-- Description section -->
             <div class="flex flex-col justify-start items-center w-[37%] mt-25 gap-5">
                 <h2 class="text-[1.5em] font-bold uppercase">Description</h2>
                 <div class="flex flex-row justify-between items-center w-full mt-10">
@@ -52,14 +51,15 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
-import products from '@/assets/products.json' // importe ton JSON
+
+import products from '@/assets/products.json'
+import Slider from '@/components/slider.vue'
 
 const route = useRoute()
 const id = computed(() => route.params.id)
 
-// Trouve le bon produit
 const product = computed(() =>
-  products.find(p => p.id === id.value)
+    products.find(p => p.id === id.value)
 )
 
 // Liste statique des volumes disponibles (tu peux remplacer cela par une donnée dynamique si nécessaire)

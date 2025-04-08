@@ -29,7 +29,8 @@ export default {
 
 <template>
     <section class="h-screen flex justify-center items-end mt-[10vh] mb-[10vh] bg-[#aaa396]">
-        <div class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-black flex flex-col items-center ">
+        <div
+            class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-black flex flex-col items-center ">
             <h3 class="text-[0.75rem] font-bold uppercase">Produit du jour</h3>
             <p class="text-xs font-light uppercase">Explorer</p>
         </div>
@@ -38,22 +39,28 @@ export default {
     <section class="h-[180vh] justify-center place-items-center">
         <div class="h-[45%] grid grid-cols-3 grid-rows-2 gap-6 w-[60%] mb-4">
             <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-               <img src="../assets/summer_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(1)"> 
+                <img src="../assets/summer_product.svg"
+                    class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(1)">
             </div>
             <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <img src="../assets/gingerbread_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(2)">
+                <img src="../assets/gingerbread_product.svg"
+                    class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(2)">
             </div>
             <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <img src="../assets/winter_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(3)">
+                <img src="../assets/winter_product.svg"
+                    class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(3)">
             </div>
             <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <img src="../assets/spring_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(4)">
+                <img src="../assets/spring_product.svg"
+                    class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(4)">
             </div>
             <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <img src="../assets/autumn_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(5)">
+                <img src="../assets/autumn_product.svg"
+                    class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(5)">
             </div>
             <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <img src="../assets/citrus_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(6)">
+                <img src="../assets/citrus_product.svg"
+                    class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(6)">
             </div>
         </div>
 
@@ -68,28 +75,25 @@ export default {
         </div>
 
         <div class="h-[15%] grid grid-cols-3 place-items-center gap-6 w-[60%]">
-            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <div class="h-full bg-black"></div>
-                <div class="text-center">
-                    <img src="../assets/lavender_product.svg" class=" my-5 rounded-2xl transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(7)">
-                </div>
+            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8 p-4">
+                <img src="../assets/lavender_product.svg"
+                    class="rounded-2xl transition duration-500 hover:grayscale cursor-pointer"
+                    @click="handleSquareClick(7)">
             </div>
-            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <div class="h-full bg-black"></div>
-                <div class="text-center">
-                    <img src="../assets/leather_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(8)">
-                </div>
+            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8 p-4">
+                <img src="../assets/leather_product.svg"
+                    class="rounded-2xl transition duration-500 hover:grayscale cursor-pointer"
+                    @click="handleSquareClick(8)">
             </div>
-            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8">
-                <div class="h-full bg-black"></div>
-                <div class="text-center">
-                    <img src="../assets/sea_product.svg" class="my-5 transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(9)">
-                </div>
+            <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8 p-4">
+                <img src="../assets/sea_product.svg"
+                    class="rounded-2xl transition duration-500 hover:grayscale cursor-pointer"
+                    @click="handleSquareClick(9)">
             </div>
         </div>
     </section>
 
-    <section class="relative h-screen flex-column mb-[50px]">
+    <section id="packs" class="relative h-screen flex-column mb-[50px]">
         <Swiper class="h-full bg-[#999999]" :slides-per-view="1" @swiper="onSwiper">
             <SwiperSlide>Slide 1</SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>
@@ -105,37 +109,25 @@ export default {
     <section class="h-screen place-items-center">
         <!-- here -->
         <div class="h-[40%] grid grid-cols-4 gap-6 w-[80%] mb-[50px]">
-            <div 
-                class="flex flex-col justify-center gap-[5px]"
-                @click="handleSquareClick('1')"
-            >
+            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('1')">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
                     <p>Produit 1</p>
                 </div>
             </div>
-            <div 
-                class="flex flex-col justify-center gap-[5px]"
-                @click="handleSquareClick('2')"
-            >
+            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('2')">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
                     <p>Produit 2</p>
                 </div>
             </div>
-            <div 
-                class="flex flex-col justify-center gap-[5px]"
-                @click="handleSquareClick('3')"
-            >
+            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('3')">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
                     <p>Produit 3</p>
                 </div>
             </div>
-            <div 
-                class="flex flex-col justify-center gap-[5px]"
-                @click="handleSquareClick('4')"
-            >
+            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('4')">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
                     <p>Produit 4</p>
