@@ -1,11 +1,11 @@
 <template>
-  <Swiper :slides-per-view="3" :space-between="50" :freeMode="true" :loop="true" :modules="modules">
-    <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
-      <div v-if="isImage(product.image)">
-        <img :src="product.image" :alt="product.nom" />
-      </div>
-    </SwiperSlide>
-  </Swiper>
+    <Swiper :slides-per-view="3" :space-between="50" :freeMode="true" :loop="true" :modules="modules">
+      <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
+        <div v-if="isImage(product.image)">
+          <img :src="product.image" :alt="product.nom"/>
+        </div>
+      </SwiperSlide>
+    </Swiper>
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
     const products = productsData;
 
     const isImage = (imagePath) => {
-      return imagePath && imagePath.trim() !== '';
+        return imagePath && imagePath.trim() !== '';
     };
 
     return {
