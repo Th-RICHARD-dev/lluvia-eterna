@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div id="top" style="clip-path: ellipse(75% 50% at 50% 20%);"
-      class="absolute w-screen h-[25vh] top-[-25%] z-50 bg-[#F1EADA]"></div>
+      class="absolute w-screen h-[25vh] top-[-20%] z-50 bg-[url('./background.svg')]"></div>
     <Swiper :slides-per-view="3" :space-between="50" :freeMode="true" :loop="true" :modules="modules">
       <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
         <div v-if="isImage(product.image)" class="cursor-pointer" @click="navigateToProduct(product.id)">
@@ -10,7 +10,7 @@
       </SwiperSlide>
     </Swiper>
     <div id="bottom" style="clip-path: ellipse(75% 50% at 50% 80%);"
-      class="absolute w-screen h-[25vh] bottom-[-25%] z-50 bg-[#F1EADA]"></div>
+      class="absolute w-screen h-[25vh] bottom-[-20%] z-50 bg-[url('./background.svg')]"></div>
   </div>
 </template>
 
