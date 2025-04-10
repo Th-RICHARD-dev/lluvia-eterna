@@ -1,11 +1,17 @@
 <template>
+  <div class="relative">
+    <div id="top" style="clip-path: ellipse(75% 50% at 50% 20%);"
+      class="absolute w-screen h-[25vh] top-[-25%] z-50 bg-[#F1EADA]"></div>
     <Swiper :slides-per-view="3" :space-between="50" :freeMode="true" :loop="true" :modules="modules">
       <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
-        <div v-if="isImage(product.image)">
-          <img :src="product.image" :alt="product.nom"/>
+        <div v-if="isImage(product.image)" class="cursor-pointer" @click="navigateToProduct(product.id)">
+          <img :src="product.image" :alt="product.nom" class="w-full h-auto" />
         </div>
       </SwiperSlide>
     </Swiper>
+    <div id="bottom" style="clip-path: ellipse(75% 50% at 50% 80%);"
+      class="absolute w-screen h-[25vh] bottom-[-25%] z-50 bg-[#F1EADA]"></div>
+  </div>
 </template>
 
 <script>
@@ -13,6 +19,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
+import { useRouter } from 'vue-router';
 import productsData from '../assets/products.json';
 
 export default {
@@ -21,15 +28,21 @@ export default {
     SwiperSlide,
   },
   setup() {
+    const router = useRouter();
     const products = productsData;
 
     const isImage = (imagePath) => {
-        return imagePath && imagePath.trim() !== '';
+      return imagePath && imagePath.trim() !== '';
+    };
+
+    const navigateToProduct = (id) => {
+      router.push({ name: 'product', params: { id } });
     };
 
     return {
       products,
       isImage,
+      navigateToProduct,
       modules: [FreeMode],
     };
   },
