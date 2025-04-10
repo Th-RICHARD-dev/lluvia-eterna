@@ -1,4 +1,6 @@
 <template>
+    <img src="../assets/ornament-footer.svg" alt="ornament-footer" class="w-[50%] mb-15 place-self-center">
+
     <section>
         <div class="text-center mb-4">
             <h2>Indécis ?</h2>
@@ -24,7 +26,7 @@
         </div>
     </section>
 
-    <section class="h-[30vh]">
+    <section class="h-[30vh] mt-10">
         <div class="flex justify-around py-4 h-[80%]">
             <div class="flex flex-col justify-start items-start gap-[5px] text-[0.65em] uppercase">
                 <p>Livraison</p>
