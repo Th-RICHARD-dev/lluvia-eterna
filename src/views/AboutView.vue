@@ -62,9 +62,10 @@ body {
       :spaceBetween="30"
       :freeMode="true"
       :modules="modules"
-      class="mySwiper mt-42 h-100 gap-4 w-[90%] mb-4"
+      class="mySwiper mt-42 h-[50vh] gap-4 w-[90%] mb-4"
     >
-      <swiper-slide class="bg-black rounded-2xl">
+      <swiper-slide class="bg-white rounded-2xl">
+        <img src="../assets/mahe_pp.svg" class="w-full h-1/2 object-cover rounded-t-2xl">
       </swiper-slide>
       <swiper-slide class="bg-black rounded-2xl">Slide 2</swiper-slide><swiper-slide class="bg-black rounded-2xl">Slide 3</swiper-slide>
       <swiper-slide class="bg-black rounded-2xl">Slide 4</swiper-slide><swiper-slide class="bg-black rounded-2xl">Slide 5</swiper-slide>
