@@ -36,7 +36,9 @@ export default {
     };
 
     const navigateToProduct = (id) => {
-      router.push({ name: 'product', params: { id } });
+      router.push({ name: 'product', params: { id } }).then(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     };
 
     return {
