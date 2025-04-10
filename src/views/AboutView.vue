@@ -64,11 +64,41 @@ body {
       :modules="modules"
       class="mySwiper mt-42 h-[50vh] gap-4 w-[90%] mb-4"
     >
-      <swiper-slide class="bg-white rounded-2xl">
-        <img src="../assets/mahe_pp.svg" class="w-full h-1/2 object-cover rounded-t-2xl">
+      <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+        <img src="../assets/mahe_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
+        <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-10 uppercase">
+          Mahé Chetibi
+        </div>
+        <h3 class="ml-5 mt-5 uppercase">Designer</h3>
       </swiper-slide>
-      <swiper-slide class="bg-black rounded-2xl">Slide 2</swiper-slide><swiper-slide class="bg-black rounded-2xl">Slide 3</swiper-slide>
-      <swiper-slide class="bg-black rounded-2xl">Slide 4</swiper-slide><swiper-slide class="bg-black rounded-2xl">Slide 5</swiper-slide>
+      <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+        <img src="../assets/evann_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
+        <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-10 uppercase">
+          Evann Amorin
+        </div>
+        <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
+      </swiper-slide>
+      <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+        <img src="../assets/basile_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
+        <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-10 uppercase">
+          Basile Duarte
+        </div>
+        <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
+      </swiper-slide>
+      <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+        <img src="../assets/thomas_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
+        <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-10 uppercase">
+          Thomas Richard
+        </div>
+        <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
+      </swiper-slide>
+      <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+        <img src="../assets/cecile_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
+        <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-10 uppercase">
+          Cécile Guibet
+        </div>
+        <h3 class="ml-5 mt-5 uppercase">Designer</h3>
+      </swiper-slide>
     </swiper>
   </template>
   <script>
