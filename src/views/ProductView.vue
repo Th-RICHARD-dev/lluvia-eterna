@@ -39,7 +39,7 @@
         <img src="/src/assets/ornament.svg" alt="ornament" class="w-[300px] absolute right-[30px] bottom-[30px] rotate-180">
     </section>
 
-    <section>
+    <section class="mb-30">
         <h1 class="text-[1.5em] font-bold text-center uppercase mt-10 mb-30 font-[Arial]">Autres Collections</h1>
 
         <Slider></Slider>

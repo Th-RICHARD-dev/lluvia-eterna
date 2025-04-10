@@ -106,8 +106,8 @@ export default {
         </div>
     </section>
 
-    <section class="h-screen place-items-center">
-        <div class="h-[40%] grid grid-cols-4 gap-6 w-[80%] mb-[50px]">
+    <section class="h-[50vh] place-items-center">
+        <div class="h-[90%] grid grid-cols-4 gap-6 w-[80%] mb-[50px]">
             <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('1')">
                 <div class="h-full bg-black"></div>
                 <div class="text-center">
