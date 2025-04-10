@@ -1,42 +1,42 @@
 <template>
   <div class="min-h-screen flex flex-col items-center justify-center">
-    <div class="w-[400px] p-8 bg-white/80 shadow-lg">
-      <h2 class="text-2xl font-light text-center mb-6 uppercase">{{ isLogin ? 'Se connecter' : 'Créer un compte' }}</h2>
+    <div class="w-[400px] bg-[#F1EADA] rounded-2xl p-8 border-solid border-1 border-[#584738]">
+      <h2 class="text-2xl text-[#584738] font-bold text-center mb-6 uppercase">{{ isLogin ? 'Se connecter' : 'Créer un compte' }}</h2>
       
       <form @submit.prevent="handleSubmit" class="space-y-4">
         <div v-if="!isLogin" class="space-y-2">
-          <label class="block text-sm uppercase">Nom</label>
+          <label class="block text-sm text-[#584738] uppercase">Nom</label>
           <input 
             type="text" 
             v-model="user.name" 
-            class="w-full p-2 border border-gray-300 focus:outline-none focus:border-black"
+            class="w-full p-2 border border-[#584738] rounded-2xl focus:outline-none focus:border-black"
             required
           />
         </div>
         
         <div class="space-y-2">
-          <label class="block text-sm uppercase">Email</label>
+          <label class="block text-sm text-[#584738] uppercase">Email</label>
           <input 
             type="email" 
             v-model="user.email" 
-            class="w-full p-2 border border-gray-300 focus:outline-none focus:border-black"
+            class="w-full p-2 border border-[#584738] rounded-2xl focus:outline-none focus:border-black"
             required
           />
         </div>
         
         <div class="space-y-2">
-          <label class="block text-sm uppercase">Mot de passe</label>
+          <label class="block text-sm text-[#584738] uppercase">Mot de passe</label>
           <input 
             type="password" 
             v-model="user.password" 
-            class="w-full p-2 border border-gray-300 focus:outline-none focus:border-black"
+            class="w-full p-2 border border-[#584738] rounded-2xl focus:outline-none focus:border-black"
             required
           />
         </div>
         
         <button 
           type="submit" 
-          class="w-full p-2 bg-black text-white uppercase text-sm hover:bg-gray-800 transition"
+          class="w-full p-2 bg-[#584738] text-white rounded-2xl uppercase text-sm hover:bg-gray-800 transition"
         >
           {{ isLogin ? 'Se connecter' : 'Créer un compte' }}
         </button>

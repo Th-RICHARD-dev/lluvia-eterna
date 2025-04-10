@@ -16,9 +16,9 @@
     <section class="h-auto flex flex-col items-center">
         <h1 class="text-[1.5em] font-bold text-center uppercase mt-10 mb-30 font-[Arial]">Type de produit</h1>
         <div class="h-auto w-[85%] flex flex-row gap-20 mb-5 p-5">
-            <div class="h-[90%] w-[50%] bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
+            <div class="h-[100vh] w-[50%] bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.nom }}</h2>
-                <img :src="product.image" class="w-[61%] h-[75%] rounded-2xl">
+                <img :src="product.image" class="w-[85%] h-[100%] rounded-2xl">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.prix }}</h2>
             </div>
             <div class="flex flex-col justify-start items-center w-[40%] gap-5">
