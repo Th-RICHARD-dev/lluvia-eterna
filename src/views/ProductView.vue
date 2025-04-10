@@ -1,21 +1,20 @@
 <template>
 <section class="h-screen flex justify-center items-end mt-[10vh] relative">
-  <img :src="product.header_image" class="w-full">
+  <img :src="product.header_image" class="w-full h-full object-cover">
 
   <div class="absolute left-1/2 -translate-x-1/2 mb-[2vh] text-center text-white flex flex-col items-center">
-    <!-- Fond flou semi-transparent -->
     <div class="absolute inset-0 bg-black/20 blur-sm rounded-md -z-10"></div>
 
-    <!-- Texte net -->
     <h3 class="text-[0.75rem] font-bold uppercase">Collection {{ product.collection }}</h3>
     <p class="text-xs font-light uppercase">Explorer</p>
   </div>
 </section>
 
 
-    <section class="h-auto flex flex-col items-center">
+    <section class="h-auto flex flex-col items-center relative">
+        <img src="/src/assets/ornament.svg" alt="ornament" class="w-[300px] absolute left-[30px] top-[30px]">
         <h1 class="text-[1.5em] font-bold text-center uppercase mt-10 mb-30 font-[Arial]">Type de produit</h1>
-        <div class="h-auto w-[85%] flex flex-row gap-20 mb-5 p-5">
+        <div class="h-auto w-[85%] flex flex-row justify-center gap-20 mb-5 p-5">
             <div class="h-[100vh] w-[50%] bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-2xl flex flex-col justify-between items-center gap-2 p-5">
                 <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.nom }}</h2>
                 <img :src="product.image" class="w-[85%] h-[100%] rounded-2xl">
@@ -37,6 +36,7 @@
                 </p>
             </div>
         </div>
+        <img src="/src/assets/ornament.svg" alt="ornament" class="w-[300px] absolute right-[30px] bottom-[30px] rotate-180">
     </section>
 
     <section>
