@@ -5,13 +5,26 @@
       
       <form @submit.prevent="handleSubmit" class="space-y-4">
         <div v-if="!isLogin" class="space-y-2">
-          <label class="block text-sm text-[#584738] uppercase">Nom</label>
-          <input 
-            type="text" 
-            v-model="user.name" 
-            class="w-full p-2 border border-[#584738] rounded-2xl focus:outline-none focus:border-black"
-            required
-          />
+          <div class="flex gap-4">
+            <div class="flex-1">
+              <label class="block text-sm text-[#584738] uppercase mb-2">Nom</label>
+              <input 
+                type="text" 
+                v-model="user.name" 
+                class="w-full p-2 border border-[#584738] rounded-2xl focus:outline-none focus:border-black"
+                required
+              />
+            </div>
+            <div class="flex-1">
+              <label class="block text-sm text-[#584738] uppercase mb-2">Prénom</label>
+              <input 
+                type="text" 
+                v-model="user.firstName" 
+                class="w-full p-2 border border-[#584738] rounded-2xl focus:outline-none focus:border-black"
+                required
+              />
+            </div>
+          </div>
         </div>
         
         <div class="space-y-2">
@@ -73,6 +86,7 @@ export default {
     const errorMessage = ref('');
     const user = reactive({
       name: '',
+      firstName: '',
       email: '',
       password: ''
     });
@@ -86,7 +100,7 @@ export default {
           await authStore.login(user.email, user.password);
         } else {
           // Register logic
-          await authStore.register(user.name, user.email, user.password);
+          await authStore.register(user.name, user.firstName, user.email, user.password);
         }
         
         // Redirect to home page after successful login/register
