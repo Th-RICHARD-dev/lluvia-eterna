@@ -1,13 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
-import ShopView from '@/views/ShopView.vue'
-import ProductView from '@/views/ProductView.vue'
-import AllProductView from '@/views/AllProductView.vue'
-import ContestView from '@/views/ContestView.vue'
-import InformationView from '@/views/InformationView.vue'
-import LoginView from '@/views/LoginView.vue'
-import SearchView from '@/views/SearchView.vue'
+import HomeView from '@/views/Home.vue'
+import About from '@/views/About.vue'
+import ShopView from '@/views/Shop.vue'
+import ProductView from '@/views/Product.vue'
+import AllProductView from '@/views/AllProduct.vue'
+import ContestView from '@/views/Contest.vue'
+import InformationView from '@/views/Information.vue'
+import SearchView from '@/views/Search.vue'
+import SignInView from '@/views/SignIn.vue'
+import SignUpView from '@/views/SignUp.vue'
+import { supabase } from '../lib/supabaseClient'
+
+// Add this before your router configuration
+const requireAuth = async (to, from, next) => {
+  const user = await supabase.auth.getUser()
+  if (!user.data.user) {
+    next('/')
+  } else {
+    next()
+  }
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,7 +32,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: AboutView,
+      component: About,
     },
     {
       path: '/shop',
@@ -48,15 +60,30 @@ const router = createRouter({
       component: InformationView,
     },
     {
-      path: '/login',
-      name: 'login',
-      component: LoginView,
-    },
-    {
       path: '/search',
       name: 'search',
       component: SearchView,
     },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: SignInView,
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUpView,
+    },
+    {
+      path: '/login',
+      redirect: '/signin'
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: () => import('../views/Account.vue'),
+      beforeEnter: requireAuth
+    }
   ],
 })
 

@@ -31,9 +31,22 @@
             <RouterLink to="/information">
                 <h2>SERVICE CLIENT</h2>
             </RouterLink>
-            <RouterLink to="/login">
+            
+            <!-- Login button or profile icon based on auth state -->
+            <RouterLink v-if="!user" to="/signup">
                 <h2>SE CONNECTER</h2>
             </RouterLink>
+            <RouterLink v-else to="/account">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    :class="['profile-icon', { 'black-icon': isNotMenu }]" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                    width="24" 
+                    height="24">
+                    <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
+                </svg>
+            </RouterLink>
+
             <RouterLink to="/search">
                 <div v-if="isNotMenu">
                     <img src="../assets/black_search_button.svg" alt="search black">
@@ -55,13 +68,31 @@
 </template>
 
 <script>
-    export default {
-        computed: {
-            isNotMenu() {
-                return this.$route.path !== '/';
-            }
+import { ref, onMounted } from 'vue'
+import { supabase } from '../lib/supabaseClient'
+
+export default {
+    data() {
+        return {
+            user: null
         }
+    },
+    computed: {
+        isNotMenu() {
+            return this.$route.path !== '/';
+        }
+    },
+    async mounted() {
+        // Get initial user state
+        const { data: { user } } = await supabase.auth.getUser()
+        this.user = user
+
+        // Listen for auth changes
+        supabase.auth.onAuthStateChange((_, session) => {
+            this.user = session?.user || null
+        })
     }
+}
 </script>
 
 <style scoped>
@@ -69,7 +100,7 @@
     z-index: 100;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,21 +109,9 @@
     height: 10vh;
 }
 
-.img {
-    width: 100px;
-}
-
 .white-header {
     background-color: #F1EADA;
     color: #000000;
-}
-
-.logo {
-    width: 100px;
-}
-
-a {
-    color: inherit;
 }
 
 .left,
@@ -102,6 +121,8 @@ a {
     align-items: center;
     font-size: 1em;
     width: 100%;
+    gap: 15px;
+    padding: 0 40px;
 }
 
 .title {
@@ -109,11 +130,26 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 0.75em;
-    width: 100%;
+    width: 40%;
+    margin: 0 20px;
+}
+
+.img {
+    width: 100px;
+    height: auto;
+}
+
+.profile-icon {
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.black-icon {
+    color: black;
 }
 
 @media screen and (max-width: 1060px) {
-
     .left,
     .right {
         font-size: 0.35em;
@@ -121,6 +157,11 @@ a {
 
     .title {
         font-size: 0.5em;
+    }
+
+    .profile-icon {
+        width: 16px;
+        height: 16px;
     }
 }
 </style>

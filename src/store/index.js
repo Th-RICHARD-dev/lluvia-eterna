@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    perfumes: []  // This will store your perfume data
+    perfumes: []
   },
   mutations: {
     setPerfumes(state, perfumes) {
@@ -10,6 +10,6 @@ export default createStore({
     }
   },
   actions: {
-    // You can add actions here to fetch perfume data
+    // Les actions pour fetch les data des parfum seront sored ici
   }
 })
