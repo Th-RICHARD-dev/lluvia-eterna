@@ -11,5 +11,6 @@ const app = createApp(App)
 app.use(store)
 app.use(createPinia())
 app.use(router)
-
+console.log("Depuis main.js →", import.meta.env.VITE_SUPABASE_URL);
 app.mount('#app')
+

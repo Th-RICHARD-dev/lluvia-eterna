@@ -69,10 +69,22 @@ export default {
             <p class="text-[0.65em] uppercase">Explorer</p>
         </div>
 
-        <div class="h-[25%] grid grid-cols-2 gap-6 w-[60%] mb-[50px]">
-            <div class="h-full bg-black"></div>
-            <div class="h-full bg-black"></div>
-        </div>
+        <div class="h-[50%] grid grid-cols-2 gap-6 w-[60%] mb-[10%]">
+            <div class="h-full bg-white rounded-2xl relative">
+                <img src="../assets/reduction_img_1.svg" class="w-full h-31/32 object-cover rounded-2xl">
+                <div class="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold mt-125 uppercase">
+                    En réduction
+                </div>
+                <h2 class="flex justify-center uppercase text-sm">Découvrir</h2>
+            </div>
+            <div class="h-full bg-[#584738] rounded-2xl relative">
+                <img src="../assets/reduction_img_2.svg" class="w-full h-31/32 object-cover rounded-2xl">
+                <div class="absolute inset-0 flex items-center justify-center text-[#584738] text-sm font-semibold mt-125 uppercase">
+                    En réduction
+                </div>
+                <h2 class="flex justify-center uppercase text-white text-sm">Découvrir</h2>
+            </div>
+</div>
 
         <div class="h-[15%] grid grid-cols-3 place-items-center gap-6 w-[60%] mb-4">
             <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center mx-8 p-4">
@@ -93,7 +105,7 @@ export default {
         </div>
     </section>
 
-    <section id="packs" class="relative h-screen flex-column mb-[50px]">
+    <section id="packs" class="mt-150 h-screen flex-column mb-[50px]">
         <Swiper class="h-full bg-[#999999]" :slides-per-view="1" @swiper="onSwiper">
             <SwiperSlide>Slide 1</SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>
