@@ -21,6 +21,6 @@
   </template>
   
   <script setup>
-  import products from '@/assets/products.json'; // ✅ ton vrai fichier
+  import products from '@/data/products.json'; // ✅ ton vrai fichier
   </script>
   

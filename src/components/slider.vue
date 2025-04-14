@@ -20,7 +20,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
 import { useRouter } from 'vue-router';
-import productsData from '../assets/products.json';
+import productsData from '../data/products.json';
 
 export default {
   components: {
