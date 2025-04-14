@@ -50,7 +50,7 @@
 import { useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
 
-import products from '@/assets/products.json'
+import products from '@/data/products.json'
 import Slider from '@/components/slider.vue'
 
 const route = useRoute()
