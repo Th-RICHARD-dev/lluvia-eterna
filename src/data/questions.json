@@ -1,8 +1,8 @@
 [
   {
-    "question": "Question 1",
-    "options": ["1", "2", "3", "4"],
-    "correctAnswer": "1"
+    "question": "Quel thème ne fait pas parti de nos collections ?",
+    "options": ["Été", "Fruit", "Noël", "Fleur"],
+    "correctAnswer": "Fleur"
   },
   {
     "question": "Question 2",
