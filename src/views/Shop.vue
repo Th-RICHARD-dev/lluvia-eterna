@@ -93,9 +93,11 @@ export default {
         Venez découvrir nos packs cadeaux pour offrir un beau parfum à vos proches, vos amis !
       </p>
       <div class="flex justify-center w-full mt-20">
-        <button class="bg-[#B59E7D] text-[#584738] border border-[#584738] rounded-xl px-6 py-2 text-[1.25em] hover:bg-[#584738] hover:text-white transition duration-300">
-          Découvrir
-        </button>
+        <a href="./Gift.vue">
+            <button class="bg-[#B59E7D] text-[#584738] border border-[#584738] rounded-xl px-6 py-2 text-[1.25em] hover:bg-[#584738] hover:text-white transition duration-300">
+            Découvrir
+            </button>
+        </a>
       </div>
     </div>
 

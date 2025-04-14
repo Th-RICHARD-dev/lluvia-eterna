@@ -9,6 +9,7 @@ import InformationView from '@/views/Information.vue'
 import SearchView from '@/views/Search.vue'
 import SignInView from '@/views/SignIn.vue'
 import SignUpView from '@/views/SignUp.vue'
+import GiftView from '@/views/Gift.vue'
 import { supabase } from '../lib/supabaseClient'
 
 // Add this before your router configuration
@@ -70,6 +71,11 @@ const router = createRouter({
       component: SignInView,
     },
     {
+      path: '/gift',
+      name: 'gift',
+      component: GiftView,
+    },
+    {
       path: '/signup',
       name: 'signup',
       component: SignUpView,
@@ -83,7 +89,7 @@ const router = createRouter({
       name: 'account',
       component: () => import('../views/Account.vue'),
       beforeEnter: requireAuth
-    }
+    },
   ],
 })
 
