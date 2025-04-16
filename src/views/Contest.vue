@@ -18,13 +18,13 @@
         </ul>
         <button @click="submitAnswer" class="button bg-[#584738] text-[#F1EADA] px-6 py-2 rounded-lg mt-5">Suivant</button>
       </div>
-      <div v-else>
-        <h2>Questionnaire terminer</h2>
+      <div class="text-center" v-else>
+        <h2>Questionnaire terminé</h2>
         <p>Votre score: {{ score }}/{{ questions.length }}</p>
       </div>
-      <img src="../assets/question_span.svg" alt="span" class="w-[50px] absolute right-[-50px] top-[50%]" />
+      <img src="/src/assets/question_span.svg" alt="span" class="w-[50px] absolute right-[-50px] top-[50%]" />
     </div>
-    <img src="../assets/question_head.svg" alt="head" class="h-[300px]" />
+    <img src="/src/assets/question_head.svg" alt="head" class="h-[300px]" />
   </div>
 </template>
 

@@ -5,8 +5,38 @@
     "correctAnswer": "Fleur"
   },
   {
-    "question": "Question 2 !",
-    "options": ["1", "2", "3", "4"],
-    "correctAnswer": "1"
+    "question": "Quand a été crée Lluvia Eterna ?",
+    "options": ["1992", "1950", "2008", "1920"],
+    "correctAnswer": "1992"
+  },
+  {
+    "question": "Quand a été crée le parfum ?",
+    "options": ["1200", "5000 av-JC", "7000 av-JC", "230"],
+    "correctAnswer": "7000 av-JC"
+  },
+  {
+    "question": "De combien de membres est composée l'équipe ?",
+    "options": ["15", "5", "9", "39"],
+    "correctAnswer": "5"
+  },
+  {
+    "question": "Combien y a t'il de parfums hors saison ?",
+    "options": ["5", "2", "8", "6"],
+    "correctAnswer": "5"
+  },
+  {
+    "question": "Combien de films ont été produits par Lluvia Eterna ?",
+    "options": ["4", "8", "1", "3"],
+    "correctAnswer": "3"
+  },
+  {
+    "question": "Le jeu concours permet d'avoir un coupon de ?",
+    "options": ["5%", "15%", "50%", "20%"],
+    "correctAnswer": "20%"
+  },
+  {
+    "question": "Quel est le nom du parfum affiché dans la page d'accueil ?",
+    "options": ["Mer", "Gelée", "Désir", "Printemps"],
+    "correctAnswer": "Désir"
   }
 ]
