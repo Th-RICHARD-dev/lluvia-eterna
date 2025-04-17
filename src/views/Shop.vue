@@ -202,7 +202,7 @@ export default {
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('3')">
-                <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-cente">
+                <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center">
                     <img src="../assets/box_autumn.svg" class="rounded-2xl w-[90%]">
                 </div>
                 <div class="text-center uppercase">
@@ -210,7 +210,7 @@ export default {
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('4')">
-                <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-cente">
+                <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center">
                     <img src="../assets/box_winter.svg" class="rounded-2xl w-[90%]">
                 </div>
                 <div class="text-center uppercase">

@@ -18,7 +18,9 @@
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px] absolute right-[10%] top-[-25px] w-[30%]">
-                <a class="h-[200px] bg-[url('/src/assets/footer_gift.svg')] object-cover bg-center rounded-2xl" href="/src/views/Gift.vue"></a>
+                <RouterLink to="/gift">
+                    <div class="h-[200px] bg-[url('/src/assets/footer_gift.svg')] object-cover bg-center rounded-2xl"></div>
+                </RouterLink>
                 <div class="text-center">
                     <p class="uppercase text-[#B59E7D]">Faire un cadeau</p>
                 </div>
