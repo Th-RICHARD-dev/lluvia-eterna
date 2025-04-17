@@ -13,6 +13,6 @@
 </template>
 <script>
     export default {
-  name: 'GiftView',
-}
+      name: 'GiftView',
+    }
 </script>

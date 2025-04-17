@@ -143,14 +143,14 @@ export default {
         <div class="h-[50%] grid grid-cols-2 gap-6 w-[60%] mb-5">
             <div class="h-[75%] bg-white rounded-2xl relative">
                 <img src="../assets/reduction_img_1.svg" class="w-full h-31/32 object-cover rounded-2xl">
-                <div class="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold mt-117 uppercase">
+                <div class="absolute inset-0 flex items-center justify-center text-white text-sm font-semibold mt-90 uppercase">
                     En réduction
                 </div>
                 <h2 class="flex justify-center uppercase text-sm">Découvrir</h2>
             </div>
             <div class="h-[75%] bg-[#584738] rounded-2xl relative">
                 <img src="../assets/reduction_img_2.svg" class="w-full h-31/32 object-cover rounded-2xl">
-                <div class="absolute inset-0 flex items-center justify-center text-[#584738] text-sm font-semibold mt-117 uppercase">
+                <div class="absolute inset-0 flex items-center justify-center text-[#584738] text-sm font-semibold mt-90 uppercase">
                     En réduction
                 </div>
                 <h2 class="flex justify-center uppercase text-white text-sm">Découvrir</h2>
@@ -159,13 +159,13 @@ export default {
 
         <div class="h-[15%] w-[60%] grid grid-cols-3 place-items-center gap-6 mb-4">
             <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center">
-                <img src="../assets/lavender_product.svg" class="w-[85%] rounded-2xl transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(7)">
+                <img src="../assets/lavender_product.svg" class="w-[85%] rounded-2xl transition duration-500 hover:grayscale cursor-pointer p-1" @click="handleSquareClick(7)">
             </div>
             <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center">
-                <img src="../assets/leather_product.svg" class="w-[85%] rounded-2xl transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(8)">
+                <img src="../assets/leather_product.svg" class="w-[85%] rounded-2xl transition duration-500 hover:grayscale cursor-pointer p-1" @click="handleSquareClick(8)">
             </div>
             <div class="h-full w-[65%] bg-[#b59e7d] rounded-2xl flex justify-center">
-                <img src="../assets/sea_product.svg" class="w-[85%] rounded-2xl transition duration-500 hover:grayscale cursor-pointer" @click="handleSquareClick(9)">
+                <img src="../assets/sea_product.svg" class="w-[85%] rounded-2xl transition duration-500 hover:grayscale cursor-pointer p-1" @click="handleSquareClick(9)">
             </div>
         </div>
     </section>
