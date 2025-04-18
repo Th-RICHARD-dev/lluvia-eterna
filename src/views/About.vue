@@ -1,5 +1,20 @@
 <template>
-  <img src="../assets/history_header_img.svg" alt="history" class="w-full h-[100vh] object-cover">
+  <div>
+    <Swiper loop="true">
+      <SwiperSlide>
+        <img src="../assets/history_header_img.svg" alt="history" class="w-full h-[100vh] object-cover">
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src="../assets/history_header_img_2.svg" alt="history" class="w-full h-[100vh] object-cover">
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src="../assets/history_header_img_3.svg" alt="history" class="w-full h-[100vh] object-cover">
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src="../assets/history_header_img_4.svg" alt="history" class="w-full h-[100vh] object-cover">
+      </SwiperSlide>
+    </Swiper>
+  </div>
   <div class="w-full">
     <svg width="100%" height="100%" viewBox="0 0 1920 400" fill="none" xmlns="http://www.w3.org/2000/svg">
       
@@ -71,37 +86,37 @@
     Découvrez l’âme de la pluie, laissez-vous emporter par l’éternité.
   </p>
   <h3 class="text-center text-2xl mb-10 mt-10">L'équipe</h3>
-  <swiper :slidesPerView="3" :spaceBetween="30" :freeMode="true" :modules="modules"
+  <swiper :slidesPerView="2.75" :spaceBetween="30" :freeMode="true" :modules="modules"
     class="mySwiper h-[50vh] gap-4 w-[90%] mb-20">
-    <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+    <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/mahe_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Mahé Chetibi
       </div>
       <h3 class="ml-5 mt-5 uppercase">Designer</h3>
     </swiper-slide>
-    <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+    <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/evann_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Evann Amorin
       </div>
       <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
     </swiper-slide>
-    <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+    <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/basile_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Basile Duarte
       </div>
       <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
     </swiper-slide>
-    <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+    <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/thomas_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Thomas Richard
       </div>
       <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
     </swiper-slide>
-    <swiper-slide class="bg-[#D9D9D9] rounded-2xl">
+    <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/cecile_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Cécile Guibet
@@ -110,6 +125,7 @@
     </swiper-slide>
   </swiper>
 </template>
+
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
