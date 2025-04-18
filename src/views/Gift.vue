@@ -36,9 +36,11 @@
       <div class="relative w-full aspect-square overflow-hidden">
         <img :src="pack.image" alt="Pack Image" class="w-full h-full object-cover" />
       </div>
-      <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
-      <p class="text-sm text-gray-500">slogan</p>
-      <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+      <div class="flex flex-col items-center gap-2">
+        <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
+        <p class="text-sm text-gray-500">{{pack.slogan}}</p>
+        <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+      </div>
     </div>
   </div>
 
@@ -52,9 +54,11 @@
       <div class="relative w-full aspect-square overflow-hidden">
         <img :src="pack.image" alt="Pack Image" class="object-cover" />
       </div>
-      <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
-      <p class="text-sm text-gray-500">slogan</p>
-      <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+      <div class="flex flex-col items-center gap-2">
+        <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
+        <p class="text-sm text-gray-500">{{pack.slogan}}</p>
+        <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+      </div>
     </div>
   </div>
 </section>

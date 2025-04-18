@@ -66,9 +66,10 @@
 import { useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
 
-import products from '@/data/products.json'
+import data from '@/data/products.json'
 import Slider from '@/components/slider.vue'
 
+const products = data.parfums;
 const route = useRoute()
 const id = computed(() => route.params.id)
 

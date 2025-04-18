@@ -29,7 +29,7 @@ export default {
   },
   setup() {
     const router = useRouter();
-    const products = productsData;
+    const products = productsData.parfums;
 
     const isImage = (imagePath) => {
       return imagePath && imagePath.trim() !== '';

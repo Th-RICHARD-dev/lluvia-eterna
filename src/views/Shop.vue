@@ -19,9 +19,13 @@ export default {
             router.push({ name: 'product', params: { id } });
         };
 
+        const handlePacksClick = (id) => {
+            router.push({ name: 'packs', params: { id } });
+        };
         return {
             modules: [Autoplay],
             handleSquareClick,
+            handlePacksClick,
             onSwiper
         };
     },
@@ -185,33 +189,33 @@ export default {
 
     <section id="collections" class="h-[50vh] place-items-center">
         <div class="h-[90%] grid grid-cols-4 gap-6 w-[80%] mb-[50px]">
-            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('1')">
+            <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('1')">
                 <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                    <img src="../assets/box_spring.svg" class="rounded-2xl">
+                    <img src="../assets/box_summer.svg" class="rounded-2xl">
                 </div>
                 <div class="text-center uppercase">
                     <p>Printemps</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('2')">
+            <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('2')">
                 <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                    <img src="../assets/box_summer.svg" class="rounded-2xl">
+                    <img src="../assets/box_winter.svg" class="rounded-2xl">
                 </div>
                 <div class="text-center uppercase">
                     <p>Été</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('3')">
+            <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('3')">
                 <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                    <img src="../assets/box_autumn.svg" class="rounded-2xl">
+                    <img src="../assets/box_spring.svg" class="rounded-2xl">
                 </div>
                 <div class="text-center uppercase">
                     <p>Automne</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px]" @click="handleSquareClick('4')">
+            <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('5')">
                 <div class="h-full bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                    <img src="../assets/box_winter.svg" class="rounded-2xl">
+                    <img src="../assets/box_autumn.svg" class="rounded-2xl">
                 </div>
                 <div class="text-center uppercase">
                     <p>Hiver</p>

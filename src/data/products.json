@@ -96,18 +96,21 @@
       "id": "1",
       "nom": "Capsule d'air été",
       "image": "/src/assets/box_summer_big.svg",
+      "slogan": "Été, la chaleur à vos portes.",
       "prix": "150,00€"
     },
     {
       "id": "2",
       "nom": "Capsule d'air hiver",
       "image": "/src/assets/box_winter_big.svg",
+      "slogan": "Hiver, la fraîcheur des fêtes ainsi que sa chaleureuse idée.",
       "prix": "150,00€"
     },
     {
       "id": "3",
       "nom": "Capsule d'air printemps",
       "image": "/src/assets/box_spring_big.svg",
+      "slogan": "Printemps, la silouette chyprée-rosée plisée de contrastes.",
       "prix": "150,00€"
     },
   
@@ -115,12 +118,14 @@
       "id": "4",
       "nom": "Capsule d'air total",
       "image": "/src/assets/box_total_air.svg",
+      "slogan": "Là où les saisons s'emmèlent, les odeurs aussi.",
       "prix": "150,00€"
     },
     {
       "id": "5",
       "nom": "Capsule d'air automne",
       "image": "/src/assets/box_autumn_big.svg",
+      "slogan": "Automne, la silhouette orangée des feuilles séchées.",
       "prix": "150,00€"
     }
   ]

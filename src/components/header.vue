@@ -10,7 +10,7 @@
             <RouterLink to="/contest">
                 <h2>CONCOURS</h2>
             </RouterLink>
-            <RouterLink to="/shop#packs">
+            <RouterLink to="/packs">
                 <h2>PACKS</h2>
             </RouterLink>
         </div>
