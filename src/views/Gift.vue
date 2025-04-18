@@ -22,17 +22,49 @@
       </div>
     </div>
   </section>
+  <h2 class="flex justify-center text-[2rem] font-semibold text-[#584638] mb-6">Packs</h2>
+  <section>
+    <div class="grid grid-cols-3 mb-3">
+      <div v-for="(pack, index) in packs"
+           :key="pack.id"
+           class="flex flex-col items-center mb-4"
+      >
+        <img :src="pack.image" alt="Pack Image" class="object-cover " />
+        <h3 class="text-lg font-semibold text-[#584638]">Pack {{ pack.nom }}</h3>
+        <p class="text-sm text-gray-600">Slogan</p>
+        <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import products from '/src/data/products.json';
+import data from '@/data/products.json';
+
 
 export default {
   name: 'GiftView',
+  mounted() {
+  console.log('Données reçues:', {
+    parfums: this.products,
+    packs: this.packs
+  });
+
+  if (this.products) {
+    console.log('Parfums:', this.products); // Accède à la liste des parfums
+  } else {
+    console.error('Parfums non trouvés ou mauvaise structure');
+  }
+},
+
   data() {
+    console.log(data.packs);
+    
     return {
-      products, // Assign the imported products to the data property
+      products: data.parfums,
+      packs: data.packs // Assign the imported products to the data property
     };
   },
+  
 };
 </script>
