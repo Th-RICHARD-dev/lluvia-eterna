@@ -22,17 +22,79 @@
       </div>
     </div>
   </section>
+<!-- Packs -->
+<section class=" mt-16 mb-16">
+  <h2 class="text-[2rem] font-semibold text-[#584638] mb-6 text-center">Packs</h2>
+
+  <!-- Premiers packs (les 2 premiers) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 mb-12">
+    <div
+      v-for="(pack, index) in firstTwoPacks"
+      :key="'first-' + pack.id"
+      class="flex flex-col items-center text-center "
+    >
+      <div class="relative w-full aspect-square overflow-hidden">
+        <img :src="pack.image" alt="Pack Image" class="w-full h-full object-cover" />
+      </div>
+      <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
+      <p class="text-sm text-gray-500">slogan</p>
+      <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+    </div>
+  </div>
+
+  <!-- Les autres packs -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      v-for="(pack, index) in remainingPacks"
+      :key="'rest-' + pack.id"
+      class="flex flex-col items-center text-center"
+    >
+      <div class="relative w-full aspect-square overflow-hidden">
+        <img :src="pack.image" alt="Pack Image" class="object-cover" />
+      </div>
+      <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
+      <p class="text-sm text-gray-500">slogan</p>
+      <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+    </div>
+  </div>
+</section>
+
 </template>
 
 <script>
-import products from '/src/data/products.json';
+import data from '@/data/products.json';
+
 
 export default {
   name: 'GiftView',
+  mounted() {
+  console.log('Données reçues:', {
+    parfums: this.products,
+    packs: this.packs
+  });
+
+  if (this.products) {
+    console.log('Parfums:', this.products); // Accède à la liste des parfums
+  } else {
+    console.error('Parfums non trouvés ou mauvaise structure');
+  }
+},
+
   data() {
+    console.log(data.packs);
+    
     return {
-      products, // Assign the imported products to the data property
+      products: data.parfums,
+      packs: data.packs // Assign the imported products to the data property
     };
   },
+  computed: {
+  firstTwoPacks() {
+    return this.packs.slice(0, 2)
+  },
+  remainingPacks() {
+    return this.packs.slice(2)
+  }
+}
 };
 </script>
