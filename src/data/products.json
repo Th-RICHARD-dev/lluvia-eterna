@@ -94,45 +94,34 @@
   "packs": [
     {
       "id": "1",
-      "nom": "Pack ÉTÉ",
-      "image": "/src/assets/box_summer.svg",
-      "prix": "150,00€",
-      "collection": "Été"
+      "nom": "Capsule d'air été",
+      "image": "/src/assets/box_summer_big.svg",
+      "prix": "150,00€"
     },
     {
       "id": "2",
-      "nom": "Pack HIVER",
-      "image": "/src/assets/winter_pack_big.svg"
+      "nom": "Capsule d'air hiver",
+      "image": "/src/assets/box_winter_big.svg",
+      "prix": "150,00€"
     },
     {
       "id": "3",
-      "nom": "Pack PRINTEMPS",
-      "image": "/src/assets/spring_pack_big.svg"
+      "nom": "Capsule d'air printemps",
+      "image": "/src/assets/box_spring_big.svg",
+      "prix": "150,00€"
     },
+  
     {
       "id": "4",
-      "nom": "Pack AUTOMNE",
-      "image": "/src/assets/autumn_pack_big.svg"
+      "nom": "Capsule d'air total",
+      "image": "/src/assets/box_total_air.svg",
+      "prix": "150,00€"
     },
     {
       "id": "5",
-      "nom": "Pack AGRUMES",
-      "image": "/src/assets/citrus_pack_big.svg"
-    },
-    {
-      "id": "6",
-      "nom": "Pack MER",
-      "image": "/src/assets/sea_pack_big.svg"
-    },
-    {
-      "id": "7",
-      "nom": "Pack CUIR",
-      "image": "/src/assets/leather_pack_big.svg"
-    },
-    {
-      "id": "8",
-      "nom": "Pack LAVANDE",
-      "image": "/src/assets/lavender_pack_big.svg"
+      "nom": "Capsule d'air automne",
+      "image": "/src/assets/box_autumn_big.svg",
+      "prix": "150,00€"
     }
   ]
 

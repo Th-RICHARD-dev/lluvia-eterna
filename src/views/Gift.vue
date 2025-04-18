@@ -22,20 +22,43 @@
       </div>
     </div>
   </section>
-  <h2 class="flex justify-center text-[2rem] font-semibold text-[#584638] mb-6">Packs</h2>
-  <section>
-    <div class="grid grid-cols-3 mb-3">
-      <div v-for="(pack, index) in packs"
-           :key="pack.id"
-           class="flex flex-col items-center mb-4"
-      >
-        <img :src="pack.image" alt="Pack Image" class="object-cover " />
-        <h3 class="text-lg font-semibold text-[#584638]">Pack {{ pack.nom }}</h3>
-        <p class="text-sm text-gray-600">Slogan</p>
-        <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+<!-- Packs -->
+<section class=" mt-16 mb-16">
+  <h2 class="text-[2rem] font-semibold text-[#584638] mb-6 text-center">Packs</h2>
+
+  <!-- Premiers packs (les 2 premiers) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 mb-12">
+    <div
+      v-for="(pack, index) in firstTwoPacks"
+      :key="'first-' + pack.id"
+      class="flex flex-col items-center text-center "
+    >
+      <div class="relative w-full aspect-square overflow-hidden">
+        <img :src="pack.image" alt="Pack Image" class="w-full h-full object-cover" />
       </div>
+      <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
+      <p class="text-sm text-gray-500">slogan</p>
+      <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
     </div>
-  </section>
+  </div>
+
+  <!-- Les autres packs -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      v-for="(pack, index) in remainingPacks"
+      :key="'rest-' + pack.id"
+      class="flex flex-col items-center text-center"
+    >
+      <div class="relative w-full aspect-square overflow-hidden">
+        <img :src="pack.image" alt="Pack Image" class="object-cover" />
+      </div>
+      <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
+      <p class="text-sm text-gray-500">slogan</p>
+      <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+    </div>
+  </div>
+</section>
+
 </template>
 
 <script>
@@ -65,6 +88,13 @@ export default {
       packs: data.packs // Assign the imported products to the data property
     };
   },
-  
+  computed: {
+  firstTwoPacks() {
+    return this.packs.slice(0, 2)
+  },
+  remainingPacks() {
+    return this.packs.slice(2)
+  }
+}
 };
 </script>
