@@ -64,16 +64,21 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import { computed, ref } from 'vue'
-
-import data from '@/data/products.json'
+import { computed, ref, onMounted } from 'vue'
+import { useProductStore } from '@/stores/products'
 import Slider from '@/components/slider.vue'
 
-const products = data.parfums;
+const productStore = useProductStore()
 const route = useRoute()
 const id = computed(() => route.params.id)
 
-const product = computed(() => products.find((p) => p.id === id.value))
+const product = computed(() => productStore.parfums.find((p) => p.id === id.value))
+
+onMounted(async () => {
+  if (productStore.parfums.length === 0) {
+    await productStore.fetchProducts()
+  }
+})
 // Liste statique des volumes disponibles (tu peux remplacer cela par une donnée dynamique si nécessaire)
 const volumes = [50, 100, 150] // Exemple : 50 ml, 100 ml, 150 ml
 
