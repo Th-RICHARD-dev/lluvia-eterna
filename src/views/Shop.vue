@@ -175,15 +175,23 @@ export default {
     </section>
 
     <section id="packs" class="relative mt-100 h-screen flex-column mb-[50px]">
-        <Swiper class="h-full bg-[#AAA396]" :slides-per-view="1" @swiper="onSwiper">
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
+        <Swiper :spaceBetween="30"
+        :centeredSlides="true"
+        :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false,
+        }"
+        :modules="modules"
+        class="h-full">
+            <SwiperSlide class="w-full h-full bg-[url('@/assets/box_total_air.svg')] bg-cover bg-center bg-no-repeat"></SwiperSlide>
+            <SwiperSlide class="w-full h-full bg-[url('@/assets/box_summer_big.svg')] bg-cover bg-center bg-no-repeat"></SwiperSlide>
+            <SwiperSlide class="w-full h-full bg-[url('@/assets/box_spring_big.svg')] bg-cover bg-center bg-no-repeat"></SwiperSlide>
         </Swiper>
 
         <div class="absolute flex flex-col justify-end bottom-2 left-1/2 transform -translate-x-1/2 text-center z-10">
-            <h3 class="text-[0.85em] uppercase">Packs</h3>
-            <p class="text-[0.65em] uppercase">Explorer</p>
+            <div class="absolute inset-0 bg-black/30 blur-sm rounded-md -z-10"></div>
+            <h3 class="text-[0.85em] uppercase text-[#584638] font-bold">Packs</h3>
+            <p class="text-[0.65em] uppercase text-[#584638]">Explorer</p>
         </div>
     </section>
 
