@@ -20,9 +20,9 @@
         class="flex flex-col items-center mb-4"
       >
         <img :src="product.image" alt="Product Image" class="object-cover" />
-        <h3 class="text-lg font-semibold text-[#584638]">Parfum {{ product.nom }}</h3>
+        <h3 class="text-lg font-semibold text-[#584638]">Parfum {{ product.name }}</h3>
         <p class="text-sm text-gray-600">Slogan</p>
-        <p class="text-sm font-medium text-[#584638] mt-2">{{ product.prix }}</p>
+        <p class="text-sm font-medium text-[#584638] mt-2">{{ product.price }} €</p>
       </div>
     </div>
   </section>
@@ -31,7 +31,7 @@
     <h2 class="text-[2rem] font-semibold text-[#584638] mb-6 text-center">Packs</h2>
 
     <!-- Premiers packs (les 2 premiers) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 mx-[15%] mb-12">
       <div
         v-for="(pack, index) in firstTwoPacks"
         :key="'first-' + pack.id"
@@ -41,9 +41,9 @@
           <img :src="pack.image" alt="Pack Image" class="w-full h-full object-cover" />
         </div>
         <div class="flex flex-col items-center gap-2">
-          <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
-          <p class="text-sm text-gray-500">{{ pack.slogan }}</p>
-          <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+          <h3 class="mt-4 text-md text-[#33383B]">Capsule d'air {{ pack.name }}</h3>
+          <p class="text-sm text-[#33383B]">{{ pack.slogan }}</p>
+          <p class="text-sm font-medium text-[#7C8386] mt-2">{{ pack.price }} €</p>
         </div>
       </div>
     </div>
@@ -59,9 +59,9 @@
           <img :src="pack.image" alt="Pack Image" class="object-cover" />
         </div>
         <div class="flex flex-col items-center gap-2">
-          <h3 class="mt-4 text-md font-semibold text-[#584638]">{{ pack.nom }}</h3>
-          <p class="text-sm text-gray-500">{{ pack.slogan }}</p>
-          <p class="text-sm font-medium text-[#584638] mt-2">{{ pack.prix }}</p>
+          <h3 class="mt-4 text-md  text-[#33383B]">Capsule d'air {{ pack.name }}</h3>
+          <p class="text-sm text-[#33383B]">{{ pack.slogan }}</p>
+          <p class="text-sm font-medium text-[#7C8386] mt-2">{{ pack.price }} €</p>
         </div>
       </div>
     </div>
@@ -82,26 +82,27 @@ export default {
     }
   },
   async mounted() {
-    try {
-      // Fetch parfums
-      const { data: parfums, error: parfumsError } = await supabase.from('parfums').select('*')
+  try {
+    const { data: parfums, error: parfumsError } = await supabase.from('parfums').select('*')
+    if (parfumsError) throw parfumsError
 
-      if (parfumsError) throw parfumsError
+    const { data: packs, error: packsError } = await supabase.from('packs').select('*')
+    if (packsError) throw packsError
 
-      // Fetch packs
-      const { data: packs, error: packsError } = await supabase.from('packs').select('*')
+    // DEBUG 
+    console.log('Parfums récupérés :', parfums)
+    console.log('Packs récupérés :', packs)
 
-      if (packsError) throw packsError
+    this.products = parfums
+    this.packs = packs
+  } catch (error) {
+    console.error('❌ Erreur lors du chargement des données:', error.message)
+    this.error = error.message
+  } finally {
+    this.loading = false
+  }
+},
 
-      this.products = parfums
-      this.packs = packs
-    } catch (error) {
-      console.error('Erreur lors du chargement des données:', error.message)
-      this.error = error.message
-    } finally {
-      this.loading = false
-    }
-  },
   computed: {
     firstTwoPacks() {
       return this.packs.slice(0, 2)
