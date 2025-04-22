@@ -28,7 +28,7 @@
         >
           <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.name }}</h2>
           <img :src="product.image" class="w-[85%] h-[100%] rounded-2xl" />
-          <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.price }}</h2>
+          <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.price }} €</h2>
         </div>
         <div class="flex flex-col justify-start items-center w-[40%] gap-5">
           <h2 class="text-[1.5em] font-bold uppercase">Description</h2>
@@ -42,7 +42,7 @@
               <p class="text-center text-[1.25rem] font-bold uppercase text-white">{{ volume }} ml</p>
             </div>
           </div>
-          <p class="uppercase text-center font-bold text-[0.95rem]">
+          <p class="text-left text-[0.95rem]">
             {{ product.description }}<br />
           </p>
         </div>

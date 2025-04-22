@@ -21,7 +21,7 @@
       >
         <img :src="product.image" alt="Product Image" class="object-cover" />
         <h3 class="text-lg font-semibold text-[#584638]">Parfum {{ product.name }}</h3>
-        <p class="text-sm text-gray-600">Slogan</p>
+        <p class="w-[75%] text-sm text-gray-600 text-center">{{product.slogan}}</p>
         <p class="text-sm font-medium text-[#584638] mt-2">{{ product.price }} €</p>
       </div>
     </div>
