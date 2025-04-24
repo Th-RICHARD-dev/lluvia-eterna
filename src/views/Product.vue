@@ -36,15 +36,18 @@
             <div
               v-for="(volume, index) in volumes"
               :key="index"
-              class="h-[10vh] w-[20%] mb-4 bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-xl flex justify-center items-center cursor-pointer"
+              class="h-[10vh] w-[25%] mb-4 bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-xl flex justify-center items-center cursor-pointer"
               @click="selectVolume(volume)"
             >
-              <p class="text-center text-[1.25rem] font-bold uppercase text-white">{{ volume }} ml</p>
+              <p class="text-center text-[1.5rem] font-bold uppercase text-white">{{ volume }} ml</p>
             </div>
           </div>
-          <p class="text-left text-[0.95rem]">
+          <p class="text-left text-[1.25rem]">
             {{ product.description }}<br />
           </p>
+          <button class="h-[7.5vh] w-[65%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300">
+          <p class="text-center text-[2rem] text-[#584738] hover:text-[#B59E7D]">Ajouter au panier</p>
+        </button>
         </div>
       </div>
       <img
