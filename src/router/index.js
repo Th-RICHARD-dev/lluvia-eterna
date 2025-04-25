@@ -11,6 +11,7 @@ import SignInView from '@/views/SignIn.vue'
 import SignUpView from '@/views/SignUp.vue'
 import GiftView from '@/views/Gift.vue'
 import PacksView from '@/views/Packs.vue'
+import CartView from '@/views/Cart.vue'
 import { supabase } from '../lib/supabaseClient'
 
 // Add this before your router configuration
@@ -95,6 +96,11 @@ const router = createRouter({
       name: 'account',
       component: () => import('../views/Account.vue'),
       beforeEnter: requireAuth
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: CartView,
     },
   ],
 })

@@ -45,7 +45,12 @@
           <p class="text-left text-[1.25rem]">
             {{ product.description }}<br />
           </p>
-          <button class="h-[7.5vh] w-[65%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300">
+          <button class="h-[7.5vh] w-[65%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" @click="cart.addToCart({
+              id: product.id,
+              nom: product.name,
+              image: product.image,
+              price: product.price
+            })">
           <p class="text-center text-[2rem] text-[#584738] hover:text-[#B59E7D]">Ajouter au panier</p>
         </button>
         </div>
@@ -75,7 +80,9 @@ import { useRoute } from 'vue-router'
 import { ref, onMounted, watch } from 'vue'
 import { useProductStore } from '@/stores/products'
 import Slider from '@/components/slider.vue'
+import { useCartStore } from '@/stores/cart'
 
+const cart = useCartStore()
 const productStore = useProductStore()
 const route = useRoute()
 const product = ref(null)

@@ -52,7 +52,7 @@
                     <img src="../assets/white_search_button.svg" alt="search white">
                 </div>
             </RouterLink>
-            <RouterLink to="/shop">
+            <RouterLink to="/cart">
                 <div v-if="isNotMenu">
                     <img src="../assets/black_basketshop.svg" alt="black basket">
                 </div>

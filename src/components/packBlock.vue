@@ -38,13 +38,18 @@
                 <div class="text-xs text-gray-500 mb-4">
                     <p>Payer en 4x dès {{ (pack.price / 4).toFixed(2) }}€ sans frais. En savoir plus.</p>
                 </div>
-                <button class="w-full flex flex-row justify-center items-center bg-[#89755C] text-white px-6 py-3 rounded-xl text-sm font-bold gap-[45%]">
+                <button class="w-full flex flex-row justify-center items-center bg-[#89755C] text-white px-6 py-3 rounded-md text-sm font-bold gap-[45%] hover:bg-[#5D666D]" @click="cart.addToCart({
+                        id: pack.id,
+                        nom: pack.name,
+                        image: pack.image,
+                        price: pack.price
+                        })">
                     Commander
                     <p class="text-sm font-semibold">{{ pack.price.toFixed(2) }} €</p>
                 </button>       
             </div>
             
-            <div class="flex-flex-col mt-10 text-sm leading-6 text-[#333]">
+            <div class="flex-flex-col text-sm leading-6 text-[#333]">
                 <h2>Description</h2>
                 <hr class="mb-4">
                 <p class="text-gray-500 mb-20 whitespace-pre-line">{{ pack.description }}</p>
@@ -57,6 +62,9 @@
   </template>
   
   <script setup>
+  import { useCartStore } from '@/stores/cart'
+
+  const cart = useCartStore()
   const props = defineProps({
     pack: Object,
     parfums: Array
