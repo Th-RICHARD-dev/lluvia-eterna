@@ -1,40 +1,41 @@
 <template>
     <div :class="[isNotMenu ? 'bg-[#F1EADA] text-black' : 'text-white', 'z-100 fixed top-0 w-full flex justify-between items-center px-4 py-2 h-[10vh]']">
-        <div class="flex justify-around items-center text-base w-full gap-4 px-10">
+        <div class="flex justify-around items-center text-base w-full gap-4">
             <RouterLink to="/shop">
-                <h2>BOUTIQUE</h2>
+                <h2 class="text-xs">BOUTIQUE</h2>
             </RouterLink>
             <RouterLink to="/all-product">
-                <h2>PRODUCTIONS</h2>
+                <h2 class="text-xs">PRODUCTIONS</h2>
             </RouterLink>
             <RouterLink to="/contest">
-                <h2>CONCOURS</h2>
+                <h2 class="text-xs">CONCOURS</h2>
             </RouterLink>
             <RouterLink to="/packs">
-                <h2>PACKS</h2>
+                <h2 class="text-xs">PACKS</h2>
             </RouterLink>
         </div>
-        <div class="flex justify-center items-center text-sm w-2/5 mx-5">
+        <div class="flex justify-center items-center text-sm w-2/5">
             <RouterLink to="/">
                 <div v-if="isNotMenu">
                     <img class="w-24 h-auto" src="../assets/logo_black.svg" alt="black logo">
                 </div>
                 <div v-else>
-                    <img class="w-24 h-auto" src="../assets/logo.svg">
+                    <img class="w-24 h-auto" src="../assets/logo.svg" alt="white logo">
                 </div>
             </RouterLink>
         </div>
-        <div class="flex justify-around items-center text-base w-full gap-4 px-10">
+        <div class="flex justify-around items-center text-base w-full gap-4">
             <RouterLink to="/about">
-                <h2>HISTOIRE</h2>
+                <h2 class="text-xs">HISTOIRE</h2>
             </RouterLink>
             <RouterLink to="/information">
-                <h2>SERVICE CLIENT</h2>
+                <h2 class="text-xs">SERVICE CLIENT</h2>
             </RouterLink>
             
             <RouterLink v-if="!user" to="/signup">
-                <h2>SE CONNECTER</h2>
+                <h2 class="text-xs">SE CONNECTER</h2>
             </RouterLink>
+
             <RouterLink v-else to="/account">
                 <svg xmlns="http://www.w3.org/2000/svg" 
                     :class="[isNotMenu ? 'text-black' : 'text-white', 'w-5 h-5']" 
@@ -46,18 +47,18 @@
 
             <RouterLink to="/search">
                 <div v-if="isNotMenu">
-                    <img src="../assets/black_search_button.svg" alt="search black">
+                    <img class="min-w-5 max-w-5" src="../assets/black_search_button.svg" alt="search black">
                 </div>
                 <div v-else>
-                    <img src="../assets/white_search_button.svg" alt="search white">
+                    <img class="min-w-5 max-w-5" src="../assets/white_search_button.svg" alt="search white">
                 </div>
             </RouterLink>
             <RouterLink to="/cart">
                 <div v-if="isNotMenu">
-                    <img src="../assets/black_basketshop.svg" alt="black basket">
+                    <img class="min-w-5 max-w-5" src="../assets/black_basketshop.svg" alt="black basket">
                 </div>
                 <div v-else>
-                    <img src="../assets/white_basketshop.svg" alt="white basket">
+                    <img class="min-w-5 max-w-5" src="../assets/white_basketshop.svg" alt="white basket">
                 </div>
             </RouterLink>
         </div>

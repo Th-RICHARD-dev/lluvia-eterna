@@ -6,18 +6,18 @@
             <h2>Indécis ?</h2>
         </div>
 
-        <div class="h-[40vh] w-[75%] grid grid-cols-2 gap-12 mx-auto bg-gradient-to-tr from-[#89765B] to-[#584738] rounded-2xl mb-4 relative">
-            <div class="flex flex-col justify-center gap-[5px] absolute left-[10%] top-[-25px] w-[30%]">
-                <div class="h-[200px] bg-[url('/src/assets/footer_question.svg')] object-cover bg-center rounded-xl p-10 flex flex-col justify-center items-center">
-                    <h2 class="text-white text-center text-xl">Nous vous aidons a trouver votre odeur parfaite !</h2>
-                    <p class="text-white text-center">En seulement quelques questions !</p>
+        <div class="h-[40vh] w-[75%] grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-12 mx-auto bg-gradient-to-tr from-[#89765B] to-[#584738] rounded-2xl mb-4 relative">
+            <div class="flex flex-col justify-center gap-[5px] absolute left-[10%] top-[-25px] w-[35%] lg:w-[30%]">
+                <div class="h-[200px] bg-[url('/src/assets/footer_question.svg')] object-cover bg-center rounded-xl p-5 md:p-10 flex flex-col justify-center items-center">
+                    <h2 class="text-white text-center text-xm lg:text-xl">Nous vous aidons a trouver votre odeur parfaite !</h2>
+                    <p class="text-white text-center text-xs lg:text-xm">En seulement quelques questions !</p>
                     <button class="text-white bg-[#584738] px-2 pt-1 pb-2 rounded-xl mt-4 border-1">C’est parti</button>
                 </div>
                 <div class="text-center">
                     <p class="uppercase text-[#B59E7D]">Questionnaire</p>
                 </div>
             </div>
-            <div class="flex flex-col justify-center gap-[5px] absolute right-[10%] top-[-25px] w-[30%]">
+            <div class="flex flex-col justify-center gap-[5px] absolute right-[10%] top-[-25px] w-[35%] lg:w-[30%]">
                 <RouterLink to="/gift">
                     <div class="h-[200px] bg-[url('/src/assets/footer_gift.svg')] object-cover bg-center rounded-2xl"></div>
                 </RouterLink>
