@@ -1,7 +1,7 @@
 <template>
   <div class="relative min-h-screen w-full overflow-hidden">
     <video src="../assets/bg_video.webm" autoplay loop muted
-      class="absolute top-0 left-0 w-screen h-screen object-fill -z-10"></video>
+      class="absolute top-0 left-0 w-screen h-screen object-cover -z-10"></video>
     <RouterLink to="/shop"
       class="absolute left-1/2 bottom-[50px] -translate-x-1/2 text-center text-white flex flex-col items-center animate-pulse">
         <span class="text-[0.75rem] font-bold uppercase">4 saisons</span>
