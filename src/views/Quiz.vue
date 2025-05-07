@@ -30,8 +30,8 @@
                 <fieldset>
                 <legend class="font-semibold mb-2">Quelles odeurs aimez vous ?</legend>
                 <div class="grid grid-cols-2 gap-4">
-                    <label v-for="scent in ['Fruitée', 'Sucrée', 'Boisée', 'Épicée']" :key="scent" class="border rounded-xl py-2 px-4">
-                    <input type="checkbox" v-model="form.scents" :value="scent" class="mr-2 accent-[#584738]">
+                    <label v-for="scent in ['Fruitée', 'Sucrée', 'Boisée', 'Épicée']" :key="scent" class="flex items-center justify-start gap-3 border border-[#584738] rounded-xl px-4 py-3 cursor-pointer transition hover:shadow-xl">
+                    <input type="checkbox" v-model="form.scents" :value="scent" class="w-6 h-6 bg-[#F1EADA] accent-[#584738] transition">
                     {{ scent }}
                     </label>
                 </div>
@@ -60,8 +60,8 @@
                 <fieldset>
                 <legend class="font-semibold mb-2">Votre souvenir vous évoque le plus ?</legend>
                 <div class="grid grid-cols-2 gap-4">
-                    <label v-for="memory in ['Bonheur', 'Nostalgie', 'Emerveillement', 'Amusement']" :key="memory" class="border rounded-xl py-2 px-4 ">
-                    <input type="checkbox" v-model="form.memories" :value="memory" class="mr-2 accent-[#584738]">
+                    <label v-for="memory in ['Bonheur', 'Nostalgie', 'Emerveillement', 'Amusement']" :key="memory" class="flex items-center justify-start gap-3 border border-[#584738] rounded-xl px-4 py-3 cursor-pointer transition hover:shadow-xl">
+                    <input type="checkbox" v-model="form.memories" :value="memory" class="w-6 h-6 bg-[#F1EADA] accent-[#584738] transition">
                     {{ memory }}
                     </label>
                 </div>
