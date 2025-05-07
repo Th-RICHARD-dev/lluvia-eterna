@@ -1,5 +1,5 @@
 <template>
-    <section class="min-h-screen px-10 py-16">
+    <section class="min-h-screen px-10 py-16 mt-10">
       <h1 class="text-3xl font-bold text-center uppercase mb-10">Votre Panier</h1>
   
       <div v-if="cart.items.length" class="flex flex-col gap-8">
