@@ -5,15 +5,19 @@
             <p class="text-center text-sm mb-6">Laissez nous vous conseillez au mieux à l'aide de vos réponses !!</p>
         
             <form @submit.prevent="handleSubmit" class="space-y-6">
-                <fieldset>
-                <legend class="font-semibold mb-2">Quelle est votre saison préférée ?</legend>
-                <div class="grid grid-cols-2 gap-4">
-                    <label v-for="season in ['Printemps', 'Eté', 'Automne', 'Hiver']" :key="season" class="border rounded-xl py-2 px-4 text-center">
-                    <input type="radio" v-model="form.season" :value="season" class="mr-2 accent-[#584738]">
-                    {{ season }}
-                    </label>
-                </div>
+                <fieldset class="mb-6">
+                    <legend class="font-semibold mb-4 text-lg">Quelle est votre saison préférée ?</legend>
+                    <div class="grid grid-cols-2 gap-4">
+                        <label
+                        v-for="season in ['Printemps', 'Eté', 'Automne', 'Hiver']"
+                        :key="season"
+                        class="flex items-center justify-start gap-3 border border-[#584738] rounded-xl px-4 py-3 cursor-pointer transition hover:shadow-xl">
+                        <input type="radio" v-model="form.season" :value="season" class="w-6 h-6 bg-[#F1EADA] accent-[#584738] transition" />
+                        <span class="text-gray-800 text-sm">{{ season }}</span>
+                        </label>
+                    </div>
                 </fieldset>
+
         
                 <fieldset>
                 <legend class="font-semibold mb-2">Quel est votre niveau d’intensité de parfum ?</legend>
@@ -26,7 +30,7 @@
                 <fieldset>
                 <legend class="font-semibold mb-2">Quelles odeurs aimez vous ?</legend>
                 <div class="grid grid-cols-2 gap-4">
-                    <label v-for="scent in ['Fruitée', 'Sucrée', 'Boisée', 'Épicée']" :key="scent" class="border rounded-xl py-2 px-4 text-center">
+                    <label v-for="scent in ['Fruitée', 'Sucrée', 'Boisée', 'Épicée']" :key="scent" class="border rounded-xl py-2 px-4">
                     <input type="checkbox" v-model="form.scents" :value="scent" class="mr-2 accent-[#584738]">
                     {{ scent }}
                     </label>
@@ -36,8 +40,8 @@
                 <fieldset>
                 <legend class="font-semibold mb-2">Pour qui ?</legend>
                 <div class="grid grid-cols-2 gap-4">
-                    <label v-for="target in ['Un enfant', 'Un adolescent', 'Un adulte', 'Une personne âgée']" :key="target" class="border rounded-xl py-2 px-4 text-center">
-                    <input type="radio" v-model="form.target" :value="target" class="mr-2 accent-[#584738]">
+                    <label v-for="target in ['Un enfant', 'Un adolescent', 'Un adulte', 'Une personne âgée']" :key="target" class="flex items-center justify-start gap-3 border border-[#584738] rounded-xl px-4 py-3 cursor-pointer transition hover:shadow-xl">
+                    <input type="radio" v-model="form.target" :value="target" class="w-6 h-6 bg-[#F1EADA] accent-[#584738] transition">
                     {{ target }}
                     </label>
                 </div>
@@ -46,8 +50,8 @@
                 <fieldset>
                 <legend class="font-semibold mb-2">Vous l’utiliseriez ?</legend>
                 <div class="grid grid-cols-2 gap-4">
-                    <label v-for="use in ['Occasionnellement', 'Souvent', 'Pour un évènement', 'Pour le travail']" :key="use" class="border rounded-xl py-2 px-4 text-center">
-                    <input type="radio" v-model="form.usage" :value="use" class="mr-2 accent-[#584738]">
+                    <label v-for="use in ['Occasionnellement', 'Souvent', 'Pour un évènement', 'Pour le travail']" :key="use" class="flex items-center justify-start gap-3 border border-[#584738] rounded-xl px-4 py-3 cursor-pointer transition hover:shadow-xl">
+                    <input type="radio" v-model="form.usage" :value="use" class="w-6 h-6 bg-[#F1EADA] accent-[#584738] transition">
                     {{ use }}
                     </label>
                 </div>
@@ -56,7 +60,7 @@
                 <fieldset>
                 <legend class="font-semibold mb-2">Votre souvenir vous évoque le plus ?</legend>
                 <div class="grid grid-cols-2 gap-4">
-                    <label v-for="memory in ['Bonheur', 'Nostalgie', 'Emerveillement', 'Amusement']" :key="memory" class="border rounded-xl py-2 px-4 text-center">
+                    <label v-for="memory in ['Bonheur', 'Nostalgie', 'Emerveillement', 'Amusement']" :key="memory" class="border rounded-xl py-2 px-4 ">
                     <input type="checkbox" v-model="form.memories" :value="memory" class="mr-2 accent-[#584738]">
                     {{ memory }}
                     </label>
