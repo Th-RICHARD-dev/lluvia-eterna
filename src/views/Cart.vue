@@ -52,7 +52,7 @@
   
         <!-- Valider commande -->
         <div class="flex justify-center mt-10">
-          <button class="bg-[#584638] text-white px-10 py-4 rounded-xl uppercase font-bold">
+          <button class="bg-[#584738] text-white px-10 py-4 rounded-xl uppercase font-bold hover:bg-[#F1EADA] hover:text-[#584738] border-[#584738] transition duration-300">
             Valider ma commande
           </button>
         </div>

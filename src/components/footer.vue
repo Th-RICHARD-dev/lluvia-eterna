@@ -11,7 +11,9 @@
                 <div class="h-[200px] bg-[url('/src/assets/footer_question.svg')] object-cover bg-center rounded-xl p-10 flex flex-col justify-center items-center">
                     <h2 class="text-white text-center text-xl">Nous vous aidons a trouver votre odeur parfaite !</h2>
                     <p class="text-white text-center">En seulement quelques questions !</p>
-                    <button class="text-white bg-[#584738] px-2 pt-1 pb-2 rounded-xl mt-4 border-1">C’est parti</button>
+                    <RouterLink to="/quiz">
+                        <button class="text-white bg-[#584738] px-2 pt-1 pb-2 rounded-xl mt-4 border-1">C’est parti</button>
+                    </RouterLink>
                 </div>
                 <div class="text-center">
                     <p class="uppercase text-[#B59E7D]">Questionnaire</p>
