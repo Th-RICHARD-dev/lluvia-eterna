@@ -115,6 +115,10 @@ const router = createRouter({
       component: CustomerView,
     },
   ],
+  //Revient en haut de la page quand on clqiue sur un des éléments du footer ou du header
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  },
 })
 
 export default router
