@@ -4,9 +4,6 @@
             <RouterLink to="/shop">
                 <h2>BOUTIQUE</h2>
             </RouterLink>
-            <RouterLink to="/all-product">
-                <h2>PRODUCTIONS</h2>
-            </RouterLink>
             <RouterLink to="/contest">
                 <h2>CONCOURS</h2>
             </RouterLink>
@@ -28,10 +25,6 @@
             <RouterLink to="/about">
                 <h2>HISTOIRE</h2>
             </RouterLink>
-            <RouterLink to="/information">
-                <h2>SERVICE CLIENT</h2>
-            </RouterLink>
-            
             <RouterLink v-if="!user" to="/signup">
                 <h2>SE CONNECTER</h2>
             </RouterLink>

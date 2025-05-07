@@ -29,8 +29,11 @@
             </div>
         </div>
 
-        <div class="text-center">
-            <p class="text-[0.65em] uppercase">voir plus</p>
+        <div class="flex flex-col text-center">
+            <RouterLink to="/packs"><p class="text-[0.65em] uppercase">Packs</p></RouterLink>
+            <RouterLink to="/shop"><p class="text-[0.65em] uppercase">Produits</p></RouterLink>
+            <RouterLink to="/customer-service"><p class="text-[0.65em] uppercase">Service client</p></RouterLink>
+            <RouterLink to="/all-product"><p class="text-[0.65em] uppercase">Production</p></RouterLink>
         </div>
     </section>
 

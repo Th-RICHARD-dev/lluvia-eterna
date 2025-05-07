@@ -13,6 +13,7 @@ import GiftView from '@/views/Gift.vue'
 import PacksView from '@/views/Packs.vue'
 import CartView from '@/views/Cart.vue'
 import QuizView from '@/views/Quiz.vue'
+import CustomerView from '@/views/CustomerService.vue'
 import { supabase } from '../lib/supabaseClient'
 
 // Add this before your router configuration
@@ -107,6 +108,11 @@ const router = createRouter({
       path: '/quiz',
       name: 'quiz',
       component: QuizView,
+    },
+    {
+      path: '/customer-service',
+      name: 'customer-service',
+      component: CustomerView,
     },
   ],
 })
