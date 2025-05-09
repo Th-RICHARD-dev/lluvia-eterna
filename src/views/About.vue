@@ -1,6 +1,13 @@
 <template>
   <div>
-    <Swiper loop="true">
+    <Swiper 
+      :loop="true"
+      :autoplay="{
+        delay: 2000,
+        disableOnInteraction: false
+      }"
+      :modules="modules"
+    >
       <SwiperSlide>
         <img src="../assets/history_header_img.svg" alt="history" class="w-full h-[100vh] object-cover">
       </SwiperSlide>
@@ -86,8 +93,14 @@
     Découvrez l’âme de la pluie, laissez-vous emporter par l’éternité.
   </p>
   <h3 class="text-center text-2xl mb-10 mt-10">L'équipe</h3>
-  <swiper :slidesPerView="2.75" :spaceBetween="30" :freeMode="true" :modules="modules"
-    class="mySwiper h-[50vh] gap-4 w-[90%] mb-20">
+  <div class="relative w-[90%] mx-auto mb-20">
+    <swiper 
+      :slidesPerView="3" 
+      :spaceBetween="30" 
+      :modules="modules"
+      :navigation="true"
+      class="mySwiper h-[50vh]"
+    >
     <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/mahe_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
@@ -124,18 +137,19 @@
       <h3 class="ml-5 mt-5 uppercase">Designer</h3>
     </swiper-slide>
   </swiper>
+</div>  <!-- Added missing closing div tag -->
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
-
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
-
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 export default {
   components: {
@@ -144,7 +158,7 @@ export default {
   },
   setup() {
     return {
-      modules: [FreeMode, Pagination],
+      modules: [FreeMode, Pagination, Navigation, Autoplay],
     };
   },
   data() {
@@ -160,3 +174,34 @@ export default {
   },
 };
 </script>
+
+<style>
+.swiper-button-next,
+.swiper-button-prev {
+  color: #584738;
+  width: 50px;
+  height: 50px;
+  background: #B59E7D;
+  border-radius: 50%;
+}
+
+.swiper-button-next {
+  right: -60px;
+}
+
+.swiper-button-prev {
+  left: -60px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0.5;
+}
+</style>

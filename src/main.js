@@ -1,4 +1,5 @@
 import './assets/main.css'
+import * as THREE from 'three';
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
