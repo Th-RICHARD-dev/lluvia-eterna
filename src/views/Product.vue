@@ -1,7 +1,7 @@
 <template>
   <div v-if="product">
     <section class="h-screen flex justify-center items-end mt-[10vh] relative">
-      <img :src="product.header_image" class="w-full h-full object-cover" />
+      <video :src="product.video" class="w-full h-full object-cover" autoplay loop muted></video>
 
       <div
         class="absolute left-1/2 -translate-x-1/2 mb-[2vh] text-center text-white flex flex-col items-center"
