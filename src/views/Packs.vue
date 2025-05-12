@@ -1,6 +1,6 @@
 <template>
-  <section class="px-10 py-16">
-    <div v-if="packs.length" class="flex flex-col gap-20 ">
+  <section class="px-4 sm:px-6 md:px-10 py-12 sm:py-14 md:py-16">
+    <div v-if="packs.length" class="flex flex-col gap-16 md:gap-20">
       <PackBlock
         v-for="pack in packs"
         :key="pack.id"
