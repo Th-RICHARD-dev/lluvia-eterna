@@ -1,7 +1,6 @@
 <template>
     <div
-        :class="[isNotMenu ? 'bg-[#F1EADA] text-black' : 'text-white', 'z-100 fixed top-0 w-full flex justify-between items-center px-4 py-2 h-[10vh]']">
-        <!-- Desktop Navigation -->
+        class="text-[#584738] z-100 fixed top-0 w-full flex justify-between items-center px-4 py-2 h-[10vh]">
         <div class="hidden md:flex justify-around items-center text-base w-full gap-4">
             <RouterLink to="/shop">
                 <h2 class="text-xs">BOUTIQUE</h2>
@@ -15,8 +14,7 @@
         </div>
 
         <RouterLink to="/" class="w-full flex justify-center items-center">
-                <img v-if="isNotMenu" class="h-16" src="../assets/logo_black.svg" alt="black logo">
-                <img v-else class="h-16" src="../assets/logo.svg" alt="white logo">
+                <img class="h-16" src="../assets/logo_black.svg" alt="black logo">
         </RouterLink>
 
         <div class="hidden md:flex justify-around items-center text-base w-full gap-4">
@@ -27,7 +25,7 @@
                 <h2 class="text-xs">SE CONNECTER</h2>
             </RouterLink>
             <RouterLink v-else to="/account">
-                <svg xmlns="http://www.w3.org/2000/svg" :class="[isNotMenu ? 'text-black' : 'text-white', 'w-5 h-5']"
+                <svg xmlns="http://www.w3.org/2000/svg" class="text-[#584738] w-5 h-5"
                     viewBox="0 0 24 24" fill="currentColor">
                     <path fill-rule="evenodd"
                         d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
@@ -35,19 +33,13 @@
                 </svg>
             </RouterLink>
             <RouterLink to="/search">
-                <div v-if="isNotMenu">
+                <div>
                     <img class="min-w-5 max-w-5" src="../assets/black_search_button.svg" alt="search black">
-                </div>
-                <div v-else>
-                    <img class="min-w-5 max-w-5" src="../assets/white_search_button.svg" alt="search white">
                 </div>
             </RouterLink>
             <RouterLink to="/cart">
-                <div v-if="isNotMenu">
+                <div>
                     <img class="min-w-5 max-w-5" src="../assets/black_basketshop.svg" alt="black basket">
-                </div>
-                <div v-else>
-                    <img class="min-w-5 max-w-5" src="../assets/white_basketshop.svg" alt="white basket">
                 </div>
             </RouterLink>
         </div>
@@ -62,7 +54,7 @@
         </div>
 
         <div v-if="menuOpen"
-            :class="[isNotMenu ? 'bg-[#F1EADA] text-black': 'bg-transparent text-white', 'absolute top-[10vh] left-0 w-full flex flex-col items-center gap-4 py-4 z-50']">
+            class="bg-[#F1EADA] text-[#584738] absolute top-[10vh] left-0 w-full flex flex-col items-center gap-4 py-4 z-50">
             <RouterLink @click="toggleMenu" to="/shop">
                 <h2 class="text-base">BOUTIQUE</h2>
             </RouterLink>
@@ -93,11 +85,6 @@ export default {
         return {
             user: null,
             menuOpen: false
-        }
-    },
-    computed: {
-        isNotMenu() {
-            return this.$route.path !== '/';
         }
     },
     methods: {
