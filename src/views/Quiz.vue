@@ -81,18 +81,9 @@
   </template>
   
   <script setup>
+  import * as THREE from 'three';
   import { reactive } from 'vue'
-  
-  const form = reactive({
-    season: '',
-    intensity: 1,
-    scents: [],
-    target: '',
-    usage: '',
-    memories: [],
-    description: ''
-  })
-  
+
   function handleSubmit() {
     console.log('Réponses envoyées :', form)
     // Navigation, API ou traitement ici

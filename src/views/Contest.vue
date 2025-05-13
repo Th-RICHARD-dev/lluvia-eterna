@@ -24,11 +24,14 @@
       </div>
       <img src="/src/assets/question_span.svg" alt="span" class="w-[50px] absolute right-[-50px] top-[50%]" />
     </div>
-    <img src="/src/assets/question_head.svg" alt="head" class="h-[300px]" />
+    <div id="three-container" class="h-[400px] w-[400px]"></div>
   </div>
 </template>
 
 <script>
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import questionsData from "@/data/questions.json";
 
 export default {
@@ -37,11 +40,115 @@ export default {
       questions: [],
       currentQuestionIndex: 0,
       selectedOption: null,
-      score: 0,
+      score: 0
     };
   },
   created() {
     this.questions = questionsData;
+  },
+  mounted() {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 1, 1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    
+    renderer.setSize(400, 400);
+    renderer.setClearColor(0x000000, 0);
+    
+    const container = document.getElementById('three-container');
+    container.appendChild(renderer.domElement);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(0, 1, 2);
+    scene.add(directionalLight);
+
+    camera.position.set(10, 15, 10
+    );
+    camera.lookAt(0, 0, 0);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.enableZoom = true;
+    controls.enablePan = false;
+    controls.minDistance = 3;
+    controls.maxDistance = 10;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 2.0;
+
+    let model = null;
+
+    this.$_threeRefs = {
+      scene,
+      camera,
+      renderer,
+      controls
+    };
+
+    const loader = new GLTFLoader();
+    loader.load(
+      '/src/assets/cafemdl.glb',
+      (gltf) => {
+        model = gltf.scene;
+        model.position.set(0, 0, 0);
+        model.scale.set(3, 3, 3);
+        model.rotation.y = Math.PI / 4;
+        
+        scene.add(model);
+        
+
+        const mixer = new THREE.AnimationMixer(model);
+        if (gltf.animations.length > 0) {
+          const action = mixer.clipAction(gltf.animations[0]);
+          action.play();
+        }
+        this.$_threeRefs.mixer = mixer;
+      },
+      (progress) => {
+        console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
+      },
+      (error) => {
+        console.error('Error loading model:', error);
+      }
+    );
+
+    const clock = new THREE.Clock();
+    const animate = () => {
+      requestAnimationFrame(animate);
+      controls.update();
+      
+      if (this.$_threeRefs.mixer) {
+        const delta = clock.getDelta();
+        this.$_threeRefs.mixer.update(delta);
+      }
+
+      if (model) {
+        model.rotation.y += 0.002;
+      }
+
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    container.addEventListener('mousedown', () => {
+      controls.autoRotate = false;
+    });
+
+    container.addEventListener('mouseup', () => {
+      setTimeout(() => {
+        controls.autoRotate = true;
+      }, 3000);
+    });
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.onWindowResize);
+    if (this.$_threeRefs) {
+      const { renderer, controls } = this.$_threeRefs;
+      if (renderer) renderer.dispose();
+      if (controls) controls.dispose();
+      this.$_threeRefs = null;
+    }
   },
   methods: {
     selectOption(option) {
@@ -54,6 +161,29 @@ export default {
       this.selectedOption = null;
       this.currentQuestionIndex++;
     },
-  },
+    onWindowResize() {
+      if (this.$_threeRefs) {
+        const { camera, renderer } = this.$_threeRefs;
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+    }
+  }
 };
 </script>
+
+<style scoped>
+#three-container {
+  cursor: grab;
+}
+
+#three-container:active {
+  cursor: grabbing;
+}
+
+#three-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+</style>
