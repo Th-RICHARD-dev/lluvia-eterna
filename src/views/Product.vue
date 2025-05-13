@@ -1,6 +1,6 @@
 <template>
   <div v-if="product">
-    <section class="h-screen flex justify-center items-end mt-[10vh] relative">
+    <section class="video-section h-screen flex justify-center items-end mt-[10vh] relative">
       <video :src="product.video" class="w-full h-full object-cover" autoplay loop muted></video>
 
       <div
@@ -22,7 +22,7 @@
       <h1 class="text-[1.5em] font-bold text-center uppercase mt-10 mb-30 font-[Arial]">
         Type de produit
       </h1>
-      <div class="h-auto w-[85%] flex flex-row justify-center gap-20 mb-5 p-5">
+      <div class="product-block h-auto w-[85%] flex flex-row justify-center gap-20 mb-5 p-5">
         <div
           class="h-[100vh] w-[50%] bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-2xl flex flex-col justify-between items-center gap-2 p-5"
         >
@@ -36,7 +36,7 @@
             <div
               v-for="(volume, index) in volumes"
               :key="index"
-              class="h-[10vh] w-[25%] mb-4 bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-xl flex justify-center items-center cursor-pointer"
+              class="volume-option h-[10vh] w-[25%] mb-4 bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-xl flex justify-center items-center cursor-pointer"
               @click="selectVolume(volume)"
             >
               <p class="text-center text-[1.5rem] font-bold uppercase text-white">{{ volume }} ml</p>
@@ -45,7 +45,7 @@
           <p class="text-left text-[1.25rem]">
             {{ product.description }}<br />
           </p>
-          <button class="h-[7.5vh] w-[65%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" @click="cart.addToCart({
+          <button class="add-to-cart-btn h-[7.5vh] w-[65%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" @click="cart.addToCart({
               id: product.id,
               nom: product.name,
               image: product.image,
@@ -77,10 +77,14 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, nextTick } from 'vue'
 import { useProductStore } from '@/stores/products'
 import Slider from '@/components/slider.vue'
 import { useCartStore } from '@/stores/cart'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 
 const cart = useCartStore()
 const productStore = useProductStore()
@@ -94,7 +98,50 @@ const loadProduct = async () => {
   product.value = productStore.parfums.find((p) => p.id === Number(route.params.id))
 }
 
-onMounted(loadProduct)
+onMounted(async () => {
+  await loadProduct()
+  await nextTick() // s'assurer que le DOM est prêt
+
+  gsap.from('.video-section', {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    ease: 'power2.out',
+  })
+
+  gsap.from('.product-block', {
+    scrollTrigger: {
+      trigger: '.product-block',
+      start: 'top 80%',
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+  })
+
+  gsap.from('.volume-option', {
+    scrollTrigger: {
+      trigger: '.volume-option',
+      start: 'top 90%',
+    },
+    scale: 0.8,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 0.6,
+  })
+
+  gsap.from('.add-to-cart-btn', {
+    scrollTrigger: {
+      trigger: '.add-to-cart-btn',
+      start: 'top 95%',
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 0.5,
+    delay: 0.2,
+  })
+})
+
 watch(() => route.params.id, loadProduct)
 
 const volumes = [50, 100, 150]
