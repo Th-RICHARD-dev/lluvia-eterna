@@ -17,12 +17,12 @@
       <img
         src="@/assets/ornament.svg"
         alt="ornament"
-        class="w-[300px] absolute left-[30px] top-[30px]"
+        class="md:block hidden w-[300px] absolute left-[30px] top-[30px]"
       />
       <h1 class="text-[1.5em] font-bold text-center uppercase mt-10 mb-30 font-[Arial]">
         Type de produit
       </h1>
-      <div class="product-block h-auto w-[85%] flex flex-row justify-center gap-20 mb-5 p-5">
+      <div class="product-block h-auto w-[85%] flex flex-row justify-center md:gap-20 gap-5 mb-5 p-5">
         <div
           class="h-[100vh] w-[50%] bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-2xl flex flex-col justify-between items-center gap-2 p-5"
         >
@@ -31,34 +31,34 @@
           <h2 class="text-[1.5em] font-bold text-center uppercase">{{ product.price }} €</h2>
         </div>
         <div class="flex flex-col justify-start items-center w-[40%] gap-5">
-          <h2 class="text-[1.5em] font-bold uppercase">Description</h2>
-          <div class="flex flex-row justify-between items-center w-full">
+          <h2 class="md:text-[1.5em] text-[1em] font-bold uppercase">Description</h2>
+          <div class="flex md:flex-row flex-col md:gap-0 gap-5 justify-between items-center w-full">
             <div
               v-for="(volume, index) in volumes"
               :key="index"
-              class="volume-option h-[10vh] w-[25%] mb-4 bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-xl flex justify-center items-center cursor-pointer"
+              class="volume-option h-[10vh] mb:w-[25%] w-[100%] md:mb-4 mb-0 bg-gradient-to-tr from-[#B59E7D] to-[#89765B] rounded-xl flex justify-center items-center cursor-pointer"
               @click="selectVolume(volume)"
             >
-              <p class="text-center text-[1.5rem] font-bold uppercase text-white">{{ volume }} ml</p>
+              <p class="text-center md:text-[1.5rem] text-[1em] font-bold uppercase text-white">{{ volume }} ml</p>
             </div>
           </div>
-          <p class="text-left text-[1.25rem]">
+          <p class="text-left md:text-[1.25rem] text-[0.75rem]">
             {{ product.description }}<br />
           </p>
-          <button class="add-to-cart-btn h-[7.5vh] w-[65%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" @click="cart.addToCart({
+          <button class="add-to-cart-btn h-[7.5vh] md:w-[65%] w-[100%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer mt-20 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" @click="cart.addToCart({
               id: product.id,
               nom: product.name,
               image: product.image,
               price: product.price
             })">
-          <p class="text-center text-[2rem] text-[#584738] hover:text-[#B59E7D]">Ajouter au panier</p>
+          <p class="text-center md:text-[2rem] text[1rem] text-[#584738] hover:text-[#B59E7D]">Ajouter au panier</p>
         </button>
         </div>
       </div>
       <img
         src="@/assets/ornament.svg"
         alt="ornament"
-        class="w-[300px] absolute right-[30px] bottom-[30px] rotate-180"
+        class="md:block hidden w-[300px] absolute right-[30px] bottom-[30px] rotate-180"
       />
     </section>
 

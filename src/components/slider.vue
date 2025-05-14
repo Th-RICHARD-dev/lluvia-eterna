@@ -3,7 +3,7 @@
     <div
       id="top"
       style="clip-path: ellipse(75% 50% at 50% 20%)"
-      class="absolute w-full h-[25vh] top-[-20%] z-50 bg-[url('./background.svg')] left-0"
+      class="absolute w-full h-[25vh] md:top-[-20%] sm:top-[-40%] top-[-75%] z-50 bg-[url('./background.svg')] left-0"
     ></div>
     <Swiper
       :slides-per-view="3"
@@ -25,7 +25,7 @@
     <div
       id="bottom"
       style="clip-path: ellipse(75% 50% at 50% 80%)"
-      class="absolute w-full h-[25vh] bottom-[-20%] z-50 bg-[url('./background.svg')] left-0"
+      class="absolute w-full h-[25vh] md:bottom-[-20%] sm:bottom-[-40%] bottom-[-75%] z-50 bg-[url('./background.svg')] left-0"
     ></div>
   </div>
 </template>
