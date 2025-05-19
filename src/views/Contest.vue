@@ -1,6 +1,6 @@
 <template>
-  <div class="mt-[75px] p-10 flex justify-evenly items-center">
-    <div class="w-[50%] contest-view place-items-center border-1 border-[#584738] rounded-lg py-5 px-10 flex flex-col items-center relative">
+  <div class="mt-[75px] flex md:flex-row flex-col justify-evenly items-center gap-5">
+    <div class="md:w-[50%] w-[75%] contest-view place-items-center border-1 border-[#584738] rounded-lg py-5 md:px-10 px-5 flex flex-col items-center relative">
       <h1>Concours</h1>
       <div v-if="currentQuestionIndex < questions.length" class="flex justify-center items-center flex-col">
         <h2>{{ questions[currentQuestionIndex].question }}</h2>
@@ -8,7 +8,7 @@
           <li
             v-for="(option, index) in questions[currentQuestionIndex].options"
             :key="index"
-            :class="['border-1 border-[#584738] rounded-lg py-5 px-10 cursor-pointer',
+            :class="['border-1 border-[#584738] rounded-lg py-5 md:px-10 px-5 cursor-pointer',
             selectedOption === option ? 'bg-[#584738] text-[#F1EADA]' : ''
             ]"
             @click="selectOption(option)"
@@ -22,9 +22,9 @@
         <h2>Questionnaire terminé</h2>
         <p>Votre score: {{ score }}/{{ questions.length }}</p>
       </div>
-      <img src="/src/assets/question_span.svg" alt="span" class="w-[50px] absolute right-[-50px] top-[50%]" />
+      <img src="/src/assets/question_span.svg" alt="span" class="md:block hidden w-[50px] absolute right-[-50px] top-[50%]" />
     </div>
-    <div id="three-container" class="h-[400px] w-[400px]"></div>
+    <div id="three-container" class="md:h-[400px] h-[200px] md:w-[400px] w-[200px]"></div>
   </div>
 </template>
 
@@ -51,12 +51,12 @@ export default {
     const camera = new THREE.PerspectiveCamera(75, 1, 1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     
-    renderer.setSize(400, 400);
-    renderer.setClearColor(0x000000, 0);
-    
     const container = document.getElementById('three-container');
     container.appendChild(renderer.domElement);
 
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setClearColor(0x000000, 0);
+    
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -117,8 +117,8 @@ export default {
     const animate = () => {
       requestAnimationFrame(animate);
       controls.update();
-      
-      if (this.$_threeRefs.mixer) {
+
+      if (this.$_threeRefs && this.$_threeRefs.mixer) {
         const delta = clock.getDelta();
         this.$_threeRefs.mixer.update(delta);
       }
@@ -140,6 +140,8 @@ export default {
         controls.autoRotate = true;
       }, 3000);
     });
+
+    window.addEventListener('resize', this.onWindowResize);
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.onWindowResize);
@@ -164,9 +166,10 @@ export default {
     onWindowResize() {
       if (this.$_threeRefs) {
         const { camera, renderer } = this.$_threeRefs;
-        camera.aspect = window.innerWidth / window.innerHeight;
+        const container = document.getElementById('three-container');
+        camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(container.clientWidth, container.clientHeight);
       }
     }
   }

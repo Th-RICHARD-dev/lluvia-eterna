@@ -77,7 +77,7 @@
     </svg>
   </div>
   <h3 class="text-center text-2xl mb-10 mt-[75px]">Notre histoire</h3>
-  <p class="text-center mx-100">
+  <p class="text-center p-10">
     Lluvia Eterna : L’essence d’un instant suspendu
     Née de la rencontre entre la nature et l’émotion pure, Lluvia Eterna est bien plus qu’une marque de parfum : c’est
     une invitation à voyager dans le temps, là où chaque goutte de pluie porte en elle un souvenir indélébile.

@@ -1,6 +1,6 @@
 <template>
     <img class="h-full" src="../assets/production_header_img.svg" alt="production header">
-    <section class="h-[100vh] flex flex-col justify-center items-center text-center">
+    <section class="h-[100vh] flex flex-col justify-center items-center text-center p-5">
         <h3 class="uppercase font-semibold my-4 text-[#584738]">Lluvia eterna PRODUCTIONS</h3>
         <p class="text-[#584738]">lluvia eterna Productions is proud to announce three long featured films in competition in the .... official
             selection of<br>
