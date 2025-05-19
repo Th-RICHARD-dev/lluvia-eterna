@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#fdf7ec] min-h-screen text-[#584738] font-serif px-6 lg:px-20 py-12 mt-20">
+    <div class="min-h-screen text-[#584738] font-serif px-6 lg:px-20 py-12 mt-20">
       <h1 class="text-center text-3xl lg:text-4xl font-semibold mb-6">NOUS CONTACTER</h1>
   
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
