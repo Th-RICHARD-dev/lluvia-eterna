@@ -64,7 +64,7 @@
         </div>
       </form>
 
-      <div v-if="errorMessage" class="mt-4 text-red-500 text-sm text-center">
+      <div v-if="errorMessage" class="mt-4 text-[#584738] text-sm text-center">
         {{ errorMessage }}
       </div>
     </div>
