@@ -6,7 +6,6 @@
         <!-- Table Header -->
         <div class="grid grid-cols-5 text-center font-semibold border-b pb-4">
           <span>Produit</span>
-          <span>Description</span>
           <span>Prix Unitaire</span>
           <span>Quantité</span>
           <span>Total</span>
@@ -14,25 +13,16 @@
   
         <!-- Items -->
         <div v-for="item in cart.items" :key="item.id" class="grid grid-cols-5 text-center items-center py-4 border-b">
-          <!-- Product image -->
-          <img :src="item.image" class="w-20 h-20 object-cover mx-auto rounded-md" />
-  
-          <!-- Description -->
-          <div class="text-left">
-            <p class="font-semibold">{{ item.nom }}</p>
-            <p class="text-xs text-gray-500">Collection : {{ item.id_pack || 'N/A' }}</p>
-            <p class="text-xs text-gray-500">Quantité : {{ item.volume || '100' }} ml</p>
-          </div>
-  
-          <!-- Price -->
-          <p>{{ item.price.toFixed(2) }}€</p>
-  
-          <!-- Quantity -->
-          <div class="flex justify-center items-center gap-2">
-            <button @click="decrease(item)" class="px-2 border rounded">-</button>
-            <span>{{ item.quantity }}</span>
-            <button @click="increase(item)" class="px-2 border rounded">+</button>
-          </div>
+        <!-- Product image -->
+        <img :src="item.image" class="w-20 h-20 object-cover mx-auto rounded-md" />
+        <!-- Price -->
+        <p>{{ item.price.toFixed(2) }}€</p>
+        <!-- Quantity -->
+         <div class="flex justify-center items-center gap-2">
+          <button @click="decrease(item)" class="px-2">-</button>
+          <span>{{ item.quantity }}</span>
+          <button @click="increase(item)" class="px-2">+</button>
+        </div>
   
           <!-- Total -->
           <p>{{ (item.price * item.quantity).toFixed(2) }}€</p>
