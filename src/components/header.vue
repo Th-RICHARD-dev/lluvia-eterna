@@ -40,11 +40,51 @@
                     <img class="min-w-5 max-w-5" src="../assets/black_search_button.svg" alt="search black">
                 </div>
             </RouterLink>
-            <RouterLink to="/cart">
-                <div>
+            <div class="relative" 
+                 @mouseover="handleCartHover(true)" 
+                 @mouseleave="handleCartLeave">
+                <div class="cursor-pointer">
                     <img class="min-w-5 max-w-5" src="../assets/black_basketshop.svg" alt="black basket">
+                    <div v-if="cart.cartCount > 0" 
+                         class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                        {{ cart.displayCount }}
+                    </div>
                 </div>
-            </RouterLink>
+                
+                <!-- Cart Preview Dropdown -->
+                <div v-if="showCartPreview" 
+                     @mouseover="handleCartHover(true)"
+                     @mouseleave="handleCartLeave"
+                     class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
+                    <div class="p-4">
+                        <div v-if="cart.items.length > 0">
+                            <div v-for="item in cart.items" :key="item.id" class="flex items-center gap-3 mb-3 relative">
+                                <img :src="item.image" class="w-12 h-12 object-cover rounded">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">{{ item.nom }}</p>
+                                    <p class="text-xs text-gray-500">{{ item.quantity }} × {{ item.price }}€</p>
+                                </div>
+                                <button @click="cart.removeFromCart(item.id)" 
+                                        class="absolute top-0 right-0 text-red-500 hover:text-red-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="border-t mt-3 pt-3">
+                                <p class="text-sm font-medium mb-3">Total: {{ cart.totalPrice.toFixed(2) }}€</p>
+                                <RouterLink to="/cart" 
+                                          class="block w-full bg-[#584738] text-white text-center py-2 rounded-lg hover:bg-[#B59E7D] transition duration-300">
+                                    Voir ma commande
+                                </RouterLink>
+                            </div>
+                        </div>
+                        <div v-else class="text-center py-4 text-gray-500">
+                            Votre panier est vide
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="md:hidden flex items-center">
@@ -82,13 +122,20 @@
 
 <script>
 import { supabase } from '../lib/supabaseClient'
+import { useCartStore } from '@/stores/cart'
 
 export default {
     data() {
         return {
             user: null,
-            menuOpen: false
+            menuOpen: false,
+            showCartPreview: false,
+            cartTimeout: null
         }
+    },
+    setup() {
+        const cart = useCartStore()
+        return { cart }
     },
     computed: {
         isHome() {
@@ -96,6 +143,18 @@ export default {
         }
     },
     methods: {
+        handleCartHover(show) {
+            if (this.cartTimeout) {
+                clearTimeout(this.cartTimeout);
+                this.cartTimeout = null;
+            }
+            this.showCartPreview = show;
+        },
+        handleCartLeave() {
+            this.cartTimeout = setTimeout(() => {
+                this.showCartPreview = false;
+            }, 200);
+        },
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
         }
