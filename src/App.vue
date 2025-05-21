@@ -8,8 +8,8 @@ const route = useRoute()
 </script>
 
 <template>
-  <headerComponent v-if="route.path !== '/constest'"/>
-  <CartNotification />
+  <headerComponent v-if="route.path !== '/contest'"/>
+  <CartNotification v-if="route.path !== '/contest'"/>
   <RouterView />
   <footerComponent v-if="route.path !== '/' && route.path != '/contest'" />
 </template>
