@@ -3,7 +3,7 @@
     <div
       id="top"
       style="clip-path: ellipse(75% 50% at 50% 20%)"
-      class="absolute w-full h-[25vh] md:top-[-20%] sm:top-[-40%] top-[-75%] z-50 bg-[url('./background.svg')] left-0"
+      class="absolute w-full h-[25vh] sm:top-[-20%] top-[-60%] z-50 bg-[url('./background.svg')] left-0"
     ></div>
     <Swiper
       :slides-per-view="3"
@@ -11,6 +11,10 @@
       :freeMode="true"
       :loop="true"
       :modules="modules"
+      :breakpoints="{
+        0: { slidesPerView: 2 },
+        640: { slidesPerView: 2 }
+      }"
     >
       <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
         <div
@@ -25,7 +29,7 @@
     <div
       id="bottom"
       style="clip-path: ellipse(75% 50% at 50% 80%)"
-      class="absolute w-full h-[25vh] md:bottom-[-20%] sm:bottom-[-40%] bottom-[-75%] z-50 bg-[url('./background.svg')] left-0"
+      class="absolute w-full h-[25vh] sm:bottom-[-20%] bottom-[-60%] z-50 bg-[url('./background.svg')] left-0"
     ></div>
   </div>
 </template>

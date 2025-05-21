@@ -95,10 +95,15 @@
   <h3 class="text-center text-2xl mb-10 mt-10">L'équipe</h3>
   <div class="relative w-[90%] mx-auto mb-20">
     <swiper 
-      :slidesPerView="3" 
+      :slidesPerView="2.5"
       :spaceBetween="30" 
       :modules="modules"
       :navigation="true"
+      :breakpoints="{
+        0: { slidesPerView: 1 },
+        640: { slidesPerView: 1.5 },
+        1024: { slidesPerView: 2.5 }
+      }"
       class="mySwiper h-[50vh]"
     >
     <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">

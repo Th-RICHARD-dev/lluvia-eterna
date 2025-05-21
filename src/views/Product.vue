@@ -68,6 +68,9 @@
       <Slider />
     </section>
   </div>
+  <div v-else-if="error">
+    <div class="text-red-500 text-center py-20">{{ error }}</div>
+  </div>
   <div v-else>
     <div class="text-center text-gray-500 py-20">Chargement du produit...</div>
   </div>
@@ -75,19 +78,19 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import { ref, onMounted, watch, nextTick } from 'vue'
+import { ref, onMounted, watch, nextTick, computed } from 'vue'
 import { useProductStore } from '@/stores/products'
 import Slider from '@/components/slider.vue'
 import { useCartStore } from '@/stores/cart'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { supabase } from '@/lib/supabaseClient'
+
 gsap.registerPlugin(ScrollTrigger)
 
-const buttonText = ref("Ajouter au panier") // Reactive variable for button text
+const buttonText = ref("Ajouter au panier")
 
 const handleButtonClick = () => {
-  buttonText.value = "Ajouté !"; // Change the text on click
+  buttonText.value = "Ajouté !";
 };
 
 const cart = useCartStore()
@@ -99,12 +102,16 @@ const loadProduct = async () => {
   if (productStore.parfums.length === 0) {
     await productStore.fetchProducts()
   }
-  product.value = productStore.parfums.find((p) => p.id === Number(route.params.id))
+  const found = productStore.parfums.find((p) => p.id === Number(route.params.id))
+  if (!found) {
+    productStore.error = "Produit introuvable."
+  }
+  product.value = found
 }
 
 onMounted(async () => {
   await loadProduct()
-  await nextTick() // s'assurer que le DOM est prêt
+  await nextTick()
 
   gsap.from('.video-section', {
     opacity: 0,
