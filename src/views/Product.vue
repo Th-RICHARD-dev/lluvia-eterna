@@ -84,13 +84,13 @@ import Slider from '@/components/slider.vue'
 import { useCartStore } from '@/stores/cart'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { supabase } from '@/lib/supabaseClient'
+
 gsap.registerPlugin(ScrollTrigger)
 
-const buttonText = ref("Ajouter au panier") // Reactive variable for button text
+const buttonText = ref("Ajouter au panier")
 
 const handleButtonClick = () => {
-  buttonText.value = "Ajouté !"; // Change the text on click
+  buttonText.value = "Ajouté !";
 };
 
 const cart = useCartStore()
@@ -111,7 +111,7 @@ const loadProduct = async () => {
 
 onMounted(async () => {
   await loadProduct()
-  await nextTick() // s'assurer que le DOM est prêt
+  await nextTick()
 
   gsap.from('.video-section', {
     opacity: 0,
