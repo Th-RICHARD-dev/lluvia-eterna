@@ -14,6 +14,7 @@ import PacksView from '@/views/Packs.vue'
 import CartView from '@/views/Cart.vue'
 import QuizView from '@/views/Quiz.vue'
 import CustomerView from '@/views/CustomerService.vue'
+import PaymentView from '@/views/payment.vue'
 import { supabase } from '../lib/supabaseClient'
 
 // Add this before your router configuration
@@ -113,6 +114,11 @@ const router = createRouter({
       path: '/customer-service',
       name: 'customer-service',
       component: CustomerView,
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: PaymentView,
     },
   ],
   //Revient en haut de la page quand on clqiue sur un des éléments du footer ou du header

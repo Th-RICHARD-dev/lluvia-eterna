@@ -42,7 +42,7 @@
   
         <!-- Valider commande -->
         <div class="flex justify-center mt-10">
-          <button class="bg-[#584738] text-white px-10 py-4 rounded-xl uppercase font-bold hover:bg-[#F1EADA] hover:text-[#584738] border-[#584738] transition duration-300">
+          <button class="bg-[#584738] text-white px-10 py-4 rounded-xl uppercase font-bold hover:bg-[#F1EADA] hover:text-[#584738] border-[#584738] transition duration-300" @click="checkout">
             Valider ma commande
           </button>
         </div>
@@ -56,8 +56,10 @@
   
   <script setup>
   import { useCartStore } from '@/stores/cart'
+  import { useRouter } from 'vue-router'
   
   const cart = useCartStore()
+  const router = useRouter()
   
   const increase = (item) => {
     cart.updateQuantity(item.id, item.quantity + 1)
@@ -67,6 +69,10 @@
     if (item.quantity > 1) {
       cart.updateQuantity(item.id, item.quantity - 1)
     }
+  }
+
+  const checkout = () => {
+    router.push({ name: 'payment' })
   }
   </script>
   
