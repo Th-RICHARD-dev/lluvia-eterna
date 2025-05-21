@@ -1,10 +1,10 @@
 <template>
-    <section class="min-h-screen flex flex-col items-center mt-30 mb-10">
-        <div class="max-w-3xl mx-auto p-6 bg-[#F1EADA] border border-[#584638] rounded-2xl text-[#584638] font-serif">
-            <h1 class="text-center text-2xl font-bold mb-1">Trouvez votre parfum idéal ici !</h1>
-            <p class="text-center text-sm mb-6">Laissez nous vous conseillez au mieux à l'aide de vos réponses !!</p>
-        
-            <form @submit.prevent="handleSubmit" class="space-y-6">
+    <section v-if="!showRecommendations" class="min-h-screen bg-[#F1EADA] mt-30 mb-10">
+      <div class="max-w-3xl mx-auto p-6 border border-[#584638] rounded-2xl text-[#584638] font-serif">
+        <h1 class="text-center text-2xl font-bold mb-1">Trouvez votre parfum idéal ici !</h1>
+        <p class="text-center text-sm mb-6">Laissez nous vous conseillez au mieux à l'aide de vos réponses !!</p>
+  
+        <form @submit.prevent="handleSubmit" class="space-y-6">
                 <fieldset class="mb-6">
                     <legend class="font-semibold mb-4 text-lg">Quelle est votre saison préférée ?</legend>
                     <div class="grid grid-cols-2 gap-4">
@@ -73,17 +73,34 @@
                 </fieldset>
         
                 <div class="text-center">
-                <button type="submit" class="border px-6 py-2 rounded-xl">Valider</button>
+                <button type="submit" class="border px-6 py-2 rounded-xl" @click="handleSubmit">Valider</button>
                 </div>
             </form>
+
+      </div>
+    </section>
+  
+    <section v-if="showRecommendations" class="py-20 mt-20">
+      <h2 class="text-center text-2xl text-[#584738] font-serif mb-12">Vos parfums idéaux :</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div v-for="perfume in recommended" :key="perfume.id" class="bg-[#fefaf5] border-4 border-[#B59E7D] p-6 rounded-xl text-center">
+          <img :src="perfume.image" class="w-full object-cover mb-4 rounded-lg" />
+          <h3 class="text-lg font-semibold text-[#584738]">Senteur {{ perfume.name }}</h3>
+          <p class="text-sm text-[#584738] mt-2">{{ perfume.description }}</p>
+          <button class="mt-4 border px-6 py-2 rounded-xl text-[#584738] hover:bg-[#584738] hover:text-white transition" @click="findProduct(perfume)">
+            Découvrir
+          </button>
         </div>
+      </div>
     </section>
   </template>
   
   <script setup>
-  import * as THREE from 'three';
-  import { reactive } from 'vue';
-
+  import { reactive, ref, onMounted } from 'vue'
+  import { supabase } from '@/lib/supabaseClient'
+  import { useRouter } from 'vue-router'
+  
+  const router = useRouter()
   const form = reactive({
     season: '',
     intensity: 1,
@@ -92,13 +109,33 @@
     usage: '',
     memories: [],
     description: ''
-  });
-
+  })
+  
+  const allPerfumes = ref([])
+  const recommended = ref([])
+  const showRecommendations = ref(false)
+  
+  onMounted(async () => {
+    const { data, error } = await supabase.from('parfums').select('*')
+    if (!error) allPerfumes.value = data
+  })
+  
   function handleSubmit() {
-    console.log('Réponses envoyées :', form)
-    // Navigation, API ou traitement ici
+    const matches = allPerfumes.value.filter(p => {
+      const scentMatch = form.scents.some(scent => p.tags?.includes(scent))
+      const seasonMatch = p.name.toLowerCase().includes(form.season.toLowerCase())
+      const descriptionMatch = form.description && p.description?.toLowerCase().includes(form.description.toLowerCase())
+      return scentMatch || seasonMatch || descriptionMatch
+    })
+  
+    recommended.value = matches.slice(0, 3)
+    showRecommendations.value = true
   }
+
+  const findProduct = (perfume) => {
+  router.push(`/product/${perfume.id}`) // Navigate to the product page
+}
   </script>
   
-
+ 
   

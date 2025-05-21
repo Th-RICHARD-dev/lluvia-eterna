@@ -45,13 +45,11 @@
           <p class="text-left md:text-[1.25rem] text-[0.75rem]">
             {{ product.description }}<br />
           </p>
-          <button class="add-to-cart-btn h-[7.5vh] md:w-[65%] w-[100%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer md:mt-20 mt-5 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" @click="cart.addToCart({
-              id: product.id,
-              nom: product.name,
-              image: product.image,
-              price: product.price
-            })">
-          <p class="text-center md:text-[1.5rem] text[1rem] text-[#584738] hover:text-[#B59E7D]">Ajouter au panier</p>
+          <button 
+          class="add-to-cart-btn h-[7.5vh] md:w-[65%] w-[100%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer md:mt-20 mt-5 group hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" 
+          @click="() => { cart.addToCart({ id: product.id, nom: product.name, image: product.image, price: product.price }); handleButtonClick(); }"
+        >
+          <p class="text-center md:text-[1.5rem] text[1rem] text-[#584738] group-hover:text-[#B59E7D] transition-colors duration-300">{{ buttonText }}</p>
         </button>
         </div>
       </div>
@@ -86,8 +84,14 @@ import Slider from '@/components/slider.vue'
 import { useCartStore } from '@/stores/cart'
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { supabase } from '@/lib/supabaseClient'
 gsap.registerPlugin(ScrollTrigger)
 
+const buttonText = ref("Ajouter au panier") // Reactive variable for button text
+
+const handleButtonClick = () => {
+  buttonText.value = "Ajouté !"; // Change the text on click
+};
 
 const cart = useCartStore()
 const productStore = useProductStore()
@@ -156,6 +160,11 @@ const selectedVolume = ref(null)
 const selectVolume = (volume) => {
   selectedVolume.value = volume
 }
+
+console.log('route id:', route.params.id)
+console.log('parfums:', productStore.parfums)
+console.log('produit trouvé:', product.value)
+
 </script>
 
 <style scoped>
