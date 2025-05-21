@@ -87,7 +87,7 @@
           <img :src="perfume.image" class="w-full object-cover mb-4 rounded-lg" />
           <h3 class="text-lg font-semibold text-[#584738]">Senteur {{ perfume.name }}</h3>
           <p class="text-sm text-[#584738] mt-2">{{ perfume.description }}</p>
-          <button class="mt-4 border px-6 py-2 rounded-xl text-[#584738] hover:bg-[#584738] hover:text-white transition">
+          <button class="mt-4 border px-6 py-2 rounded-xl text-[#584738] hover:bg-[#584738] hover:text-white transition" @click="findProduct(perfume)">
             Découvrir
           </button>
         </div>
@@ -98,7 +98,9 @@
   <script setup>
   import { reactive, ref, onMounted } from 'vue'
   import { supabase } from '@/lib/supabaseClient'
+  import { useRouter } from 'vue-router'
   
+  const router = useRouter()
   const form = reactive({
     season: '',
     intensity: 1,
@@ -129,6 +131,10 @@
     recommended.value = matches.slice(0, 3)
     showRecommendations.value = true
   }
+
+  const findProduct = (perfume) => {
+  router.push(`/product/${perfume.id}`) // Navigate to the product page
+}
   </script>
   
  
