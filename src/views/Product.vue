@@ -46,10 +46,10 @@
             {{ product.description }}<br />
           </p>
           <button 
-          class="add-to-cart-btn h-[7.5vh] md:w-[65%] w-[100%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer md:mt-20 mt-5 hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" 
+          class="add-to-cart-btn h-[7.5vh] md:w-[65%] w-[100%] bg-gradient-to-tr bg-[#B59E7D] rounded-2xl border-2 border-solid border-[#584738] flex justify-center items-center cursor-pointer md:mt-20 mt-5 group hover:bg-[#584738] hover:border-[#B59E7D] transition duration-300" 
           @click="() => { cart.addToCart({ id: product.id, nom: product.name, image: product.image, price: product.price }); handleButtonClick(); }"
         >
-          <p class="text-center md:text-[1.5rem] text[1rem] text-[#584738] hover:text-[#B59E7D]">{{ buttonText }}</p>
+          <p class="text-center md:text-[1.5rem] text[1rem] text-[#584738] group-hover:text-[#B59E7D] transition-colors duration-300">{{ buttonText }}</p>
         </button>
         </div>
       </div>
