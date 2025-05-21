@@ -28,7 +28,7 @@
           <span class="font-medium text-[#584738]">Total</span>
           <span class="font-medium text-[#584738]">{{ cart.totalPrice.toFixed(2) }}€</span>
         </div>
-        <button class="w-full bg-[#584738] text-white py-3 rounded-lg hover:bg-[#B59E7D] transition-colors duration-300">
+        <button class="w-full bg-[#584738] text-white py-3 rounded-lg hover:bg-[#B59E7D] transition-colors duration-300" @click="checkout">
           Procéder au paiement
         </button>
       </div>
