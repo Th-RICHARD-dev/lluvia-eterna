@@ -13,8 +13,7 @@
       :modules="modules"
       :breakpoints="{
         0: { slidesPerView: 2 },
-        640: { slidesPerView: 2 },
-        768: { slidesPerView: 3 }
+        640: { slidesPerView: 2 }
       }"
     >
       <SwiperSlide v-for="product in products" :key="product.id" class="text-center">
