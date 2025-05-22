@@ -86,7 +86,7 @@
         <div v-for="perfume in recommended" :key="perfume.id" class="bg-[#fefaf5] border-4 border-[#B59E7D] p-6 rounded-xl text-center">
           <img :src="perfume.image" class="w-full object-cover mb-4 rounded-lg" />
           <h3 class="text-lg font-semibold text-[#584738]">Senteur {{ perfume.name }}</h3>
-          <p class="text-sm text-[#584738] mt-2">{{ perfume.description }}</p>
+          <p class="text-sm text-[#584738] mt-2">{{ perfume.slogan }}</p>
           <button class="mt-4 border px-6 py-2 rounded-xl text-[#584738] hover:bg-[#584738] hover:text-white transition" @click="findProduct(perfume)">
             Découvrir
           </button>
@@ -108,7 +108,7 @@
     target: '',
     usage: '',
     memories: [],
-    description: ''
+    slogan: ''
   })
   
   const allPerfumes = ref([])
@@ -124,8 +124,8 @@
     const matches = allPerfumes.value.filter(p => {
       const scentMatch = form.scents.some(scent => p.tags?.includes(scent))
       const seasonMatch = p.name.toLowerCase().includes(form.season.toLowerCase())
-      const descriptionMatch = form.description && p.description?.toLowerCase().includes(form.description.toLowerCase())
-      return scentMatch || seasonMatch || descriptionMatch
+      const sloganMatch = form.slogan && p.slogan.toLowerCase().includes(form.slogan.toLowerCase())
+      return scentMatch || seasonMatch || sloganMatch
     })
   
     recommended.value = matches.slice(0, 3)

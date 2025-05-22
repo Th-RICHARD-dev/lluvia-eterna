@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-[75px] relative h-screen">
+  <div class="relative h-screen">    
     <!-- 3D Model Container -->
     <div id="three-container" class="absolute inset-0 w-full h-full">
       <!-- 3D model will be rendered here -->
@@ -13,9 +13,12 @@
     </button>
 
   <!-- Quiz Container -->
-    <div class="relative z-10 flex h-full">
+    <div class="relative z-10 flex p-10">
       <div v-if="currentQuestionIndex < questions.length" 
-           class="max-w-xl w-full mx-4 p-8 backdrop-blur-md bg-white/20 rounded-xl absolute left-8 top-16">
+           class="max-w-xl w-full p-8 backdrop-blur-md bg-white/20 rounded-xl h-auto">
+        <div v-if="currentQuestionIndex === 0" class="z-30 bg-green-100 border border-green-300 text-green-800 px-6 py-3 rounded-xl shadow text-center max-w-xl mb-[10px]">
+          <span class="font-semibold">Participez au concours&nbsp;!</span> Répondez correctement aux questions pour obtenir jusqu'à <span class="font-bold">-15% de réduction</span> sur votre panier
+        </div>
         <h2 class="text-2xl font-bold text-[#584738] text-center mb-8">{{ questions[currentQuestionIndex].question }}</h2>
         <div class="grid grid-cols-1 gap-4">
           <button
@@ -40,9 +43,15 @@
         </button>
       </div>
       
-      <div v-else class="absolute left-8 top-16 text-center text-[#584738]">
-        <h2 class="text-3xl font-bold mb-4">Questionnaire terminé</h2>
+      <div v-else class="absolute left-8 top-16 text-center text-[#584738] p-8 backdrop-blur-md bg-white/20 rounded-xl">
+        <h2 class="text-3xl font-bold mb-4">Concours terminé</h2>
         <p class="text-xl mb-8">Votre score: {{ score }}/{{ questions.length }}</p>
+        <div v-if="score > 0" class="text-green-700 text-lg font-semibold">
+          Félicitations ! Vous avez obtenu une réduction de -{{ discount }}% sur votre panier.
+        </div>
+        <div v-else class="text-red-700 text-lg font-semibold">
+          Vous n'avez pas obtenu de réduction cette fois-ci. Réessayez pour tenter votre chance !
+        </div>
       </div>
     </div>
 
@@ -72,7 +81,7 @@
 </template>
 
 <script>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useRouter } from 'vue-router'
@@ -178,14 +187,14 @@ export default {
 
     const questions = ref([
       {
-        question: "Quel est l'ingrédient principal de notre parfum signature ?",
+        question: "Quelle est l'odeur d'une bonne boulangerie ?",
         options: [
-          "L'essence de rose de Damas",
-          "L'extrait de jasmin",
-          "La vanille de Madagascar",
-          "Le bois de santal"
+         "Le pain chaud",
+          "Le chocolat",
+          "Le café",
+          "Le croissant"
         ],
-        correctAnswer: "L'essence de rose de Damas"
+        correctAnswer: "Le pain chaud"
       },
       {
         question: "En quelle année Lluvia Eterna a-t-elle été fondée ?",
@@ -198,14 +207,14 @@ export default {
         correctAnswer: "1992"
       },
       {
-        question: "Quelle est la signification de 'Lluvia Eterna' ?",
+        question: "Quelle fleur est présente dans notre parfum 'Printemps' ?",
         options: [
-          "Pluie Éternelle",
-          "Lumière Infinie",
-          "Amour Éternel",
-          "Parfum Divin"
+          "Coquelicot",
+          "Paquerette",
+          "Violette",
+          "Tournesol"
         ],
-        correctAnswer: "Pluie Éternelle"
+        correctAnswer: "Violette"
       }
     ])
 
@@ -216,17 +225,32 @@ export default {
     ]
     let currentModelIndex = 0
 
+    // Helper for discount message
+    const discount = computed(() => {
+      if (score.value === 1) return 5
+      if (score.value === 2) return 10
+      if (score.value === 3) return 15
+      return 0
+    })
+
     const submitAnswer = () => {
       if (selectedOption.value === questions.value[currentQuestionIndex.value].correctAnswer) {
         score.value++
       }
       selectedOption.value = null
       currentQuestionIndex.value++
-      
       // Change model when moving to next question
       if (currentQuestionIndex.value < questions.value.length) {
         currentModelIndex = (currentModelIndex + 1) % models.length
         loadNextModel()  // Load the next model immediately
+      }
+      // Set discount based on score when contest is finished
+      if (currentQuestionIndex.value === questions.value.length) {
+        let discount = 0
+        if (score.value === 1) discount = 5
+        else if (score.value === 2) discount = 10
+        else if (score.value === 3) discount = 15
+        localStorage.setItem('lluvia_discount', discount.toString())
       }
     }
 
@@ -267,7 +291,8 @@ export default {
       showExitConfirmation,
       selectOption,
       submitAnswer,
-      exitQuiz
+      exitQuiz,
+      discount
     }
   }
 }

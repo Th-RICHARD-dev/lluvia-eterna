@@ -1,9 +1,7 @@
 <template>
   <div class="min-h-screen py-12 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-2xl font-light uppercase mb-8">Mon compte</h1>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="max-w-4xl mx-auto">      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
         <div class="bg-white/80 p-6 shadow-sm">
           <nav>
             <ul class="space-y-4">
@@ -131,12 +129,6 @@ export default {
     const router = useRouter();
     const authStore = useAuthStore();
     
-    onMounted(() => {
-      if (!authStore.isAuthenticated) {
-        router.push('/login');
-      }
-    });
-    
     const activeSection = ref('profile');
     const showAddressForm = ref(false);
     
@@ -163,6 +155,15 @@ export default {
       country: 'France',
     });
     
+    onMounted(() => {
+      if (!authStore.isAuthenticated) {
+        router.push('/signin');
+      }
+      // Load orders from localStorage
+      const storedOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+      orders.value = storedOrders;
+    });
+    
     const updateProfile = async () => {
       try {
         await authStore.updateProfile(profile);
@@ -186,8 +187,8 @@ export default {
       addresses.value.splice(index, 1);
     };
     
-    const logout = () => {
-      authStore.logout();
+    const logout = async () => {
+      await authStore.logout();
       router.push('/');
     };
     
