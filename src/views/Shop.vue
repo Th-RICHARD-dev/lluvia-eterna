@@ -125,27 +125,27 @@ export default {
                     @click="handleSquareClick(1)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/gingerbread_product.svg"
+                <img src="../assets/winter_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(2)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/winter_product.svg"
+                <img src="../assets/spring_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(3)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/spring_product.svg"
+                <img src="../assets/autumn_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(4)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/autumn_product.svg"
+                <img src="../assets/gingerbread_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(5)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/citrus_product.svg"
+                <img src="../assets/sea_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(6)">
             </div>
@@ -183,17 +183,17 @@ export default {
 
         <div class="w-[60%] grid grid-cols-1 md:grid-cols-3 place-items-center gap-12 mb-4">
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/lavender_product.svg"
+                <img src="../assets/leather_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(7)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/leather_product.svg"
+                <img src="../assets/lavender_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(8)">
             </div>
             <div class="bg-[#b59e7d] rounded-2xl flex justify-center p-2">
-                <img src="../assets/sea_product.svg"
+                <img src="../assets/citrus_product.svg"
                     class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl"
                     @click="handleSquareClick(9)">
             </div>
@@ -228,7 +228,7 @@ export default {
                         class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl">
                 </div>
                 <div class="text-center uppercase">
-                    <p>Printemps</p>
+                    <p>Été</p>
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('2')">
@@ -237,7 +237,7 @@ export default {
                         class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl">
                 </div>
                 <div class="text-center uppercase">
-                    <p>Été</p>
+                    <p>Hiver</p>
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('3')">
@@ -246,7 +246,7 @@ export default {
                         class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl">
                 </div>
                 <div class="text-center uppercase">
-                    <p>Automne</p>
+                    <p>Printemps</p>
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px]" @click="handlePacksClick('5')">
@@ -255,7 +255,7 @@ export default {
                         class="transition duration-500 hover:grayscale cursor-pointer object-cover rounded-xl">
                 </div>
                 <div class="text-center uppercase">
-                    <p>Hiver</p>
+                    <p>Automne</p>
                 </div>
             </div>
         </div>
