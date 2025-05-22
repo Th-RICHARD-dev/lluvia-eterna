@@ -63,18 +63,6 @@ export default {
       try {
         errorMessage.value = ''
 
-        // Check-up de si l'utilisateur existe dans la base de donnée
-        const { data: userExists } = await supabase
-          .from('users')
-          .select('email')
-          .eq('email', email.value.trim())
-          .single()
-
-        if (!userExists) {
-          errorMessage.value = 'Compte non trouvé'
-          return
-        }
-
         const { data, error } = await supabase.auth.signInWithPassword({
           email: email.value.trim(),
           password: password.value
