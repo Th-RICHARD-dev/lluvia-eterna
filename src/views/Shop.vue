@@ -34,7 +34,7 @@ export default {
 
 <template>
     <section class="h-[80vh] flex justify-center mt-[10vh] mb-[10vh] bg-[#B59E7D]">
-        <swiper :spaceBetween="30" :navigation="true" :centeredSlides="true" :modules="modules" class="mySwiper">
+        <swiper :spaceBetween="30" :navigation="true" :centeredSlides="true"  :autoplay="{delay: 2500, disableOnInteraction: false}" :modules="modules" class="mySwiper">
             <swiper-slide>
                 <div class="h-full flex justify-center items-center p-10 gap-10">
                     <div>
