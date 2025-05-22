@@ -20,7 +20,7 @@
                     </RouterLink>
                 </div>
                 <div class="text-center">
-                    <p class="uppercase text-[#B59E7D]">Questionnaire</p>
+                    <p class="uppercase text-[#e6cdaa]">Questionnaire</p>
                 </div>
             </div>
             <div class="flex flex-col justify-center gap-[5px] absolute md:right-[10%] right-auto md:left-auto left-[50%] md:translate-none translate-x-[-50%] md:top-[-25px] top-auto md:bottom-auto bottom-[25px] md:w-[35%] w-[75%] lg:w-[30%]">
@@ -29,7 +29,7 @@
                     </div>
                 </RouterLink>
                 <div class="text-center">
-                    <p class="uppercase text-[#B59E7D]">Faire un cadeau</p>
+                    <p class="uppercase text-[#e6cdaa]">Faire un cadeau</p>
                 </div>
             </div>
         </div>
