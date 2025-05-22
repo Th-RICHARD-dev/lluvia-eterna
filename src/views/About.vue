@@ -111,35 +111,35 @@
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Mahé Chetibi
       </div>
-      <h3 class="ml-5 mt-5 uppercase">Designer</h3>
+      <h3 class="ml-5 mt-5 uppercase">CEO/DRH</h3>
     </swiper-slide>
     <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/evann_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Evann Amorin
       </div>
-      <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
+      <h3 class="ml-5 mt-5 uppercase">CEO/Parfumier</h3>
     </swiper-slide>
     <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/basile_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Basile Duarte
       </div>
-      <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
+      <h3 class="ml-5 mt-5 uppercase">CEO/Manager ventes</h3>
     </swiper-slide>
     <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/thomas_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Thomas Richard
       </div>
-      <h3 class="ml-5 mt-5 uppercase">Developpeur</h3>
+      <h3 class="ml-5 mt-5 uppercase">CEO/Commercial</h3>
     </swiper-slide>
     <swiper-slide class="bg-[#D9D9D9] rounded-2xl bg-[url('../assets/background_alt.svg')] bg-center bg-cover">
       <img src="../assets/cecile_pp.svg" class="w-full h-2/3 object-cover rounded-2xl">
       <div class="absolute inset-0 flex items-center text-white text-lg font-semibold ml-3 mt-14 uppercase">
         Cécile Guibet
       </div>
-      <h3 class="ml-5 mt-5 uppercase">Designer</h3>
+      <h3 class="ml-5 mt-5 uppercase">CEO/RH</h3>
     </swiper-slide>
   </swiper>
 </div>  <!-- Added missing closing div tag -->

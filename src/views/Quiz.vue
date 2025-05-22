@@ -1,5 +1,5 @@
 <template>
-    <section v-if="!showRecommendations" class="min-h-screen bg-[#F1EADA] mt-30 mb-10">
+    <section v-if="!showRecommendations" class="min-h-screen mt-30 mb-10">
       <div class="max-w-3xl mx-auto p-6 border border-[#584638] rounded-2xl text-[#584638] font-serif">
         <h1 class="text-center text-2xl font-bold mb-1">Trouvez votre parfum idéal ici !</h1>
         <p class="text-center text-sm mb-6">Laissez nous vous conseillez au mieux à l'aide de vos réponses !!</p>

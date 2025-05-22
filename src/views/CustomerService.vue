@@ -74,6 +74,7 @@
                   <option>Information sur les produits</option>
                   <option>Commande</option>
                   <option>Retour</option>
+                  <option>Autre</option>
                 </select>
               </div>
               <div>
