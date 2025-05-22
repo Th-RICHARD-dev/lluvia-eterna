@@ -187,14 +187,14 @@ export default {
 
     const questions = ref([
       {
-        question: "Quel est l'ingrédient principal de notre parfum signature ?",
+        question: "Quelle est l'odeur d'une bonne boulangerie ?",
         options: [
-          "L'essence de rose de Damas",
-          "L'extrait de jasmin",
-          "La vanille de Madagascar",
-          "Le bois de santal"
+         "Le pain chaud",
+          "Le chocolat",
+          "Le café",
+          "Le croissant"
         ],
-        correctAnswer: "L'essence de rose de Damas"
+        correctAnswer: "Le pain chaud"
       },
       {
         question: "En quelle année Lluvia Eterna a-t-elle été fondée ?",
@@ -207,14 +207,14 @@ export default {
         correctAnswer: "1992"
       },
       {
-        question: "Quelle est la signification de 'Lluvia Eterna' ?",
+        question: "Quelle fleur est présente dans notre parfum 'Printemps' ?",
         options: [
-          "Pluie Éternelle",
-          "Lumière Infinie",
-          "Amour Éternel",
-          "Parfum Divin"
+          "Coquelicot",
+          "Paquerette",
+          "Violette",
+          "Tournesol"
         ],
-        correctAnswer: "Pluie Éternelle"
+        correctAnswer: "Violette"
       }
     ])
 
