@@ -56,11 +56,40 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useCartStore } from '@/stores/cart'
 
 const confirmed = ref(false)
+const cart = useCartStore()
 
 function handleConfirm() {
-  confirmed.value = true
+  // Retrieve existing orders from localStorage
+  const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+  // Discount logic (copied from Cart.vue)
+  const discountPercent = Number(localStorage.getItem('lluvia_discount') || 0)
+  const discountRate = discountPercent / 100
+  const discountAmount = discountRate > 0 ? cart.totalPrice * discountRate : 0
+  const discountedTotal = discountRate > 0 ? cart.totalPrice - discountAmount : cart.totalPrice
+
+  // Create a new order object with cart details
+  const newOrder = {
+    id: Date.now(),
+    date: new Date().toLocaleDateString(),
+    status: 'En attente',
+    total: discountedTotal.toFixed(2),
+    discount: discountAmount.toFixed(2),
+    discountPercent,
+    items: cart.items.map(item => ({
+      id: item.id,
+      nom: item.nom,
+      quantity: item.quantity,
+      price: item.price,
+      image: item.image
+    }))
+  };
+  orders.push(newOrder);
+  localStorage.setItem('orders', JSON.stringify(orders));
+  confirmed.value = true;
+  cart.clearCart(); // Optionally clear the cart after order
 }
 </script>
 

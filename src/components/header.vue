@@ -121,26 +121,30 @@
 </template>
 
 <script>
+import { useAuthStore } from '@/stores/auth';
 import { supabase } from '../lib/supabaseClient'
 import { useCartStore } from '@/stores/cart'
 
 export default {
-    data() {
-        return {
-            user: null,
-            menuOpen: false,
-            showCartPreview: false,
-            cartTimeout: null
-        }
-    },
     setup() {
-        const cart = useCartStore()
-        return { cart }
+        const cart = useCartStore();
+        const authStore = useAuthStore();
+        return { cart, authStore };
     },
     computed: {
         isHome() {
-            return this.$route.path === '/'
+            return this.$route.path === '/';
+        },
+        user() {
+            return this.authStore.user;
         }
+    },
+    data() {
+        return {
+            menuOpen: false,
+            showCartPreview: false,
+            cartTimeout: null
+        };
     },
     methods: {
         handleCartHover(show) {
@@ -158,14 +162,6 @@ export default {
         toggleMenu() {
             this.menuOpen = !this.menuOpen;
         }
-    },
-    async mounted() {
-        const { data: { user } } = await supabase.auth.getUser()
-        this.user = user
-
-        supabase.auth.onAuthStateChange((_, session) => {
-            this.user = session?.user || null
-        })
     }
-}
+};
 </script>
