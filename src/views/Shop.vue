@@ -49,7 +49,7 @@ export default {
                         </p>
                         <a href="#collections">
                             <button
-                                class="bg-[#B59E7D] text-[#584738] border border-[#584738] rounded-xl px-6 py-2 md:text-[1.25em] text-[0.75em] hover:bg-[#584738] hover:text-white transition duration-300">
+                                class="bg-[#B59E7D] text-[#584738] border border-[#584738] rounded-xl px-6 py-2 mt-5 md:text-[1.25em] text-[0.75em] hover:bg-[#584738] hover:text-white transition duration-300">
                                 Découvrir
                             </button>
                         </a>
