@@ -28,6 +28,14 @@
           <span class="font-medium text-[#584738]">Total</span>
           <span class="font-medium text-[#584738]">{{ cart.totalPrice.toFixed(2) }}€</span>
         </div>
+        <div v-if="hasDiscount" class="flex justify-between items-center mb-2">
+          <span class="text-green-700 font-medium">Remise Concours ({{ discountPercent }}%)</span>
+          <span class="text-green-700 font-medium">-{{ discountAmount.toFixed(2) }}€</span>
+        </div>
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-bold text-[#584738]">Total à payer</span>
+          <span class="font-bold text-[#584738]">{{ discountedTotal.toFixed(2) }}€</span>
+        </div>
         <button class="w-full bg-[#584738] text-white py-3 rounded-lg hover:bg-[#B59E7D] transition-colors duration-300" @click="checkout">
           Procéder au paiement
         </button>
@@ -43,25 +51,32 @@
   </div>
 </template>
   
-  <script setup>
-  import { useCartStore } from '@/stores/cart'
-  import { useRouter } from 'vue-router'
-  
-  const cart = useCartStore()
-  const router = useRouter()
-  
-  const increase = (item) => {
-    cart.updateQuantity(item.id, item.quantity + 1)
-  }
-  
-  const decrease = (item) => {
-    if (item.quantity > 1) {
-      cart.updateQuantity(item.id, item.quantity - 1)
-    }
-  }
+<script setup>
+import { useCartStore } from '@/stores/cart'
+import { useRouter } from 'vue-router'
+import { ref, computed } from 'vue'
 
-  const checkout = () => {
-    router.push({ name: 'payment' })
+const cart = useCartStore()
+const router = useRouter()
+
+// Discount logic
+const discountPercent = Number(localStorage.getItem('lluvia_discount') || 0)
+const hasDiscount = ref(discountPercent > 0)
+const discountRate = discountPercent / 100
+const discountAmount = computed(() => hasDiscount.value ? cart.totalPrice * discountRate : 0)
+const discountedTotal = computed(() => hasDiscount.value ? cart.totalPrice - discountAmount.value : cart.totalPrice)
+
+const increase = (item) => {
+  cart.updateQuantity(item.id, item.quantity + 1)
+}
+
+const decrease = (item) => {
+  if (item.quantity > 1) {
+    cart.updateQuantity(item.id, item.quantity - 1)
   }
-  </script>
-  
+}
+
+const checkout = () => {
+  router.push({ name: 'payment' })
+}
+</script>
