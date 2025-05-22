@@ -43,7 +43,7 @@
         </button>
       </div>
       
-      <div v-else class="absolute left-8 top-16 text-center text-[#584738]">
+      <div v-else class="absolute left-8 top-16 text-center text-[#584738] p-8 backdrop-blur-md bg-white/20 rounded-xl">
         <h2 class="text-3xl font-bold mb-4">Concours terminé</h2>
         <p class="text-xl mb-8">Votre score: {{ score }}/{{ questions.length }}</p>
         <div v-if="score > 0" class="text-green-700 text-lg font-semibold">
