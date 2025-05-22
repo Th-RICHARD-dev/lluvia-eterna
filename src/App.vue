@@ -11,5 +11,5 @@ const route = useRoute()
   <headerComponent v-if="route.path !== '/contest'"/>
   <CartNotification v-if="route.path !== '/contest'"/>
   <RouterView />
-  <footerComponent v-if="route.path !== '/' && route.path != '/contest'" />
+  <footerComponent v-if="route.path !== '/' && route.path != '/contest' && route.path != '/quiz'" />
 </template>
